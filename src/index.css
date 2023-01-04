@@ -1,13 +1,58 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  overflow-y: scroll;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: rgb(236, 236, 236);
+}
+
+body .offcanvas-backdrop.show {
+  opacity: 0.8;
+}
+
+body .offcanvas {
+  background: #113f67 ;
+  height: 100vh!important;
+}
+body .offcanvas .offcanvas-body a { 
+  text-decoration: none;
+}
+body .offcanvas .offcanvas-body a  {
+  width: fit-content;
+  color: white;
+  margin: 0;
+}
+body .offcanvas .offcanvas-body a:hover  {
+  color: #38598b;
+}
+body .offcanvas .offcanvas-body {
+  padding: 30px 30px;
+  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+  }
+
+* {
+  /* Font de toda la pagina */
+  font-family: "Tahoma";
+  scroll-behavior: smooth
+}
+body .offcanvas .menu-closemark {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  height: 37.5px
+  
+}
+body .offcanvas .menu-closemark p {
+ color: white;
+ margin: 0;
+ font-size: 15px;
+ text-align: center;
+}
+body .offcanvas .menu-closemark p:hover {
+  color: #38598b ;
 }
