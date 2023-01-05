@@ -125,7 +125,7 @@ const RecomendadosContainer = styled.div`
             flex-direction: column;
             height: 27vh;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
 
             a {
                 display: flex;
@@ -137,7 +137,8 @@ const RecomendadosContainer = styled.div`
                 h1 {
                     width: 100%;
                     color: ${props => props.theme.fontPrim};
-                    font-size: 30px;
+                    font-size: 25px;
+                    margin: 0;
                     &:hover {
                         color: ${props => props.theme.hover};
                     }

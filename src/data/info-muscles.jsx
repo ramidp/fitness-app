@@ -91,8 +91,6 @@ const musculos = [
             ex2: 'Prensa',
             ex3: 'Estocadas hacia atrás',
             ex4: 'Estocadas hacia adelante',
-            ex5: 'Hip Thrusts',
-            ex6: 'Gemelos/Calves',
             ex7: 'Romanian Deadlift (RDL)',
         }
     },
@@ -101,6 +99,46 @@ const musculos = [
         name: 'Trapecios',
         exercises: {
             ex1: 'High Pull',
+            ex2: 'Encogimiento con Mancuernas',
+            ex3: 'Remo al cuello',
+        }
+    },
+    {
+        id: 9,
+        name: 'Aductores',
+        exercises: {
+            ex1: 'Zancada lateral',
+            ex2: 'Sentadilla Sumo',
+            ex3: 'Levantamiento de talón suizo',
+        }
+    },
+    {
+        id: 10,
+        name: 'Abductores',
+        exercises: {
+            ex1: 'Sentadillas laterales',
+            ex2: 'Plank con Tijera',
+            ex3: 'Estiramamiento lateral con resistencia',
+        }
+    },
+    {
+        id: 11,
+        name: 'Gemelos',
+        exercises: {
+            ex1: 'Elevacion de Gemelos',
+            ex2: 'Sentadillas con Salto',
+            ex3: 'Zancadas con Salto',
+            ex4: 'Elevacion de Talones',
+        }
+    },
+    {
+        id: 12,
+        name: 'Gluteos/Cadera',
+        exercises: {
+            ex1: 'Sentadilla con una sola pierna',
+            ex2: 'Hip Thrusts',
+            ex3: 'Puente elevado de Gluteos',
+            ex4: 'Monster walk con banda de resistencia',
         }
     },
 ]

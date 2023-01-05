@@ -152,20 +152,19 @@ const InfoUtilContainer = styled.div`
         width: 95%;
 
     .submenu {
-        background-color: white;
-        border-radius: 20px;
         width: 100%;
         height: 40px;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         gap: 20px;
         @media (max-width: 700px) {
             gap: 10px;
         }
         a { 
+            padding: 5px;
             width: auto;
-            color: ${props => props.theme.fontPrim};
+            color: ${props => props.theme.fontWhite};
             margin: 0;
             text-decoration: none;
             &:hover {

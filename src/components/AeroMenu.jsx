@@ -241,6 +241,7 @@ export default AeroMenu;
 const AeroMenuContainer= styled.div`
 
         height: auto;
+        min-height: 90vh;
         color: ${props => props.theme.fontPrim};
         background-color: ${props => props.theme.fourth};
         display: flex;

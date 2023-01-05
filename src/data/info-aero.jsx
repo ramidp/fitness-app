@@ -14,7 +14,7 @@ const aeroex = [
         id: 1,
         name: 'Saltar Soga',
         exercises: {
-            ex1: 'HIIT',
+            ex1: 'Tipo HIIT',
             ex2: 'Bajo',
             ex3: 'Moderado',
             ex4: 'Alto',
@@ -24,7 +24,7 @@ const aeroex = [
         id: 2,
         name: 'Cinta',
         exercises: {
-            ex1: 'HIIT',
+            ex1: 'Tipo HIIT',
             ex2: 'Bajo (3-4.6km/h)',
             ex3: 'Medio (6.1-8km/h)',
             ex4: 'Alto (8.1-11km/h)',
@@ -34,10 +34,10 @@ const aeroex = [
         id: 3,
         name: 'Functional',
         exercises: {
-            ex1: 'HIIT',
+            ex1: 'Tipo HIIT',
             ex2: 'Burpees',
             ex3: 'Bajo',
-            ex4: 'Medio',
+            ex4: 'Moderado',
             ex5: 'Alto',
                 }
          },
@@ -45,9 +45,58 @@ const aeroex = [
         id: 4,
         name: 'ABS',
         exercises: {
-            ex1: 'HIIT',
+            ex1: 'Tipo HIIT',
             ex2: 'Bajo',
-            ex3: 'Medio',
+            ex4: 'Moderado',
+            ex4: 'Alto',
+                }
+         },
+    {   
+        id: 5,
+        name: 'Eliptico',
+        exercises: {
+            ex1: 'Tipo HIIT',
+            ex2: 'Bajo',
+            ex4: 'Moderado',
+            ex4: 'Alto',
+                }
+         },
+    {   
+        id: 6,
+        name: 'Natación',
+        exercises: {
+            ex1: 'Tipo HIIT',
+            ex2: 'Bajo',
+            ex4: 'Moderado',
+            ex4: 'Alto',
+                }
+         },
+    {   
+        id: 7,
+        name: 'Aire Libre',
+        exercises: {
+            ex1: 'Correr',
+            ex2: 'Caminar',
+            ex3: 'Bicicleta',
+                }
+         },
+    {   
+        id: 8,
+        name: 'Bicicleta Fija',
+        exercises: {
+            ex1: 'Tipo HIIT',
+            ex2: 'Bajo',
+            ex4: 'Moderado',
+            ex4: 'Alto',
+                }
+         },
+    {   
+        id: 9,
+        name: 'Danza/Zumba',
+        exercises: {
+            ex1: 'Tipo HIIT',
+            ex2: 'Bajo',
+            ex4: 'Moderado',
             ex4: 'Alto',
                 }
          },

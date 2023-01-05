@@ -270,6 +270,7 @@ export default MainMenu;
 const MainMenuContainer= styled.div`
 
         height: auto;
+        min-height: 90vh;
         color: ${props => props.theme.fontPrim};
         background-color: ${props => props.theme.fourth};
         display: flex;
