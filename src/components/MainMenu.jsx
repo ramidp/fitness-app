@@ -37,7 +37,7 @@ const MainMenu = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-            if (serie !== 0 && reps !== 0 && muscle !== "" && exName !== "Sin Ejercicio Seleccionado" && day !== "Dia") {
+            if (serie !== 0 && reps !== 0 && muscle !== "" && exName !== "Sin Ejercicio Seleccionado" && day !== "Elegir Dia") {
                 try {
                     await addDoc(consulta,
                     {
