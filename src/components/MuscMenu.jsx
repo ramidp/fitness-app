@@ -24,8 +24,9 @@ const MuscMain = () => {
     const [alerta, cambiarAlerta] = useState({})
 
     useEffect (() => {
-            const multiply = reps * serie;
-            setResult(multiply)
+            const multiply = ((serie*60)*2/60) * 7 * (reps/10);
+            const roundResult = Math.round(multiply)
+            setResult(roundResult)
     },[reps, serie])
 
 
@@ -238,7 +239,7 @@ const MuscMain = () => {
                             
                         </div>
                         <div className="label-input col-12">
-                            <label className="col-12 inten-label" htmlFor="">Intensidad 
+                            <label className="col-12 inten-label" htmlFor="">Calorias 
                                 <span>
                                     <a href="/info-util">
                                     (Mas info)
@@ -278,7 +279,10 @@ const MainMenuContainer= styled.div`
         align-items: center;
         padding: 35px;
         margin-top: 9vh;
-        width: 95%;
+        width: 70%;
+        @media (max-width: 1200px) {
+            width: 95%;
+        }
 
 
         .button, button {
@@ -331,13 +335,10 @@ const MainMenuContainer= styled.div`
                 .arr-item {
                     margin-bottom: 10px;
                     width: fit-content;
-                    font-size: 25px;
+                    font-size: 20px;
                     cursor: pointer;
-                    @media (max-width: 921px) {
-                        font-size: 20px;
-                    }
                     @media (max-width: 765px) {
-                        font-size: 18px;
+                        font-size: 16px;
                     }
                     &:hover {
                         font-weight: 700;
@@ -351,22 +352,17 @@ const MainMenuContainer= styled.div`
                 @media (max-width: 765px) {
                         font-size: 16px;
                     }
-                
-
             }
 
             label {
                 padding-bottom: 10px;
                 margin-bottom: 10px;
                 border-bottom: 1px solid ${props => props.theme.primary};
-                font-size: 30px;
+                font-size: 27px;
                 font-weight: 400;
 
-                @media (max-width: 921px) {
-                        font-size: 27px;
-                    }
                 @media (max-width: 765px) {
-                        font-size: 25px;
+                        font-size: 22px;
                     }
 
 

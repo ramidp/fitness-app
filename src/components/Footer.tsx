@@ -58,7 +58,7 @@ const Footer = () => {
                                 <a href="mailto: ramidp@gmail.com">xxxx@gmail.com</a>
                             </div>
                             <div className="p-3 hide card col-3 m-0">
-                                <h1>Problemas con la App?</h1>
+                                <h1>Recomendaciones a la App?</h1>
                                 <p>También puedes comunicarte con nosotros o mandar un formulario</p>
                                 <p>Más información</p>
                                 <p>Escribinos ante cualquier duda.</p>
@@ -129,7 +129,10 @@ const FooterContainer = styled.div`
         flex-direction: column;
         padding: 35px;
         margin-top: 9vh;
-        width: 95%;
+        width: 70%;
+        @media (max-width: 1200px) {
+            width: 95%;
+        }
 
 
     .hide{ 

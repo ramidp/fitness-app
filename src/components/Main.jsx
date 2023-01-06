@@ -44,7 +44,7 @@ const Main = () => {
                     <h4>Consejos del Dia</h4>
                     <>
                     {deleted === false ?
-                    <div className="tips">
+                    <div id="1" className="tips">
                         <p>No olvides de beber tus 2 litros de agua diaros</p>
                         <FontAwesomeIcon onClick={() => setDeleted(true)} className="close" icon={faXmark} />
                     </div>
@@ -82,8 +82,6 @@ const Main = () => {
                         </div>
                 </div>
             </div>
-
-            
         </Container>
      );
 }
@@ -100,10 +98,22 @@ const Container = styled.div`
         align-items: center;
         padding: 35px;
         margin-top: 9vh;
-        width: 95%;
+        width: 70%;
+        @media (max-width: 1200px) {
+            width: 95%;
+        }
+
 
     .tip-box {
+        width: 100%;
+        height: auto;
         padding: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+        gap: 10px;
+
         .tips {
             display: flex;
             justify-content: space-between;
@@ -111,9 +121,14 @@ const Container = styled.div`
             gap: 20px;
             background-color: ${props => props.theme.primary};
             padding: 10px;
+            width: 80%;
+            @media (max-width: 1200px) {
+                width: 100%;
+            }
             p {
                 color:  ${props => props.theme.fontWhite};
                 margin: 0;
+                text-align: center;
             }
         }
     }
@@ -131,11 +146,25 @@ const Container = styled.div`
 
     .main-box {
         display: flex;
-        justify-content: space-around;
+        justify-content: flex-start;
         align-items: center;
+        flex-direction: column;
+        height: 80vh;
+
+        @media (max-width: 1200px) {
+            height: auto;
+        }
+
 
         .day-box {
-            width: 50%;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 10px;
+            @media (max-width: 1200px) {
+                width: 100%;
+            }
     
             .day-title {
                 font-size: 30px;

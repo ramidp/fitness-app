@@ -117,8 +117,10 @@ const RecomendadosContainer = styled.div`
         flex-direction: column;
         padding: 35px;
         margin-top: 9vh;
-        width: 95%;
-
+        width: 70%;
+        @media (max-width: 1200px) {
+            width: 95%;
+        }
     
         .videos-box {
             display: flex;

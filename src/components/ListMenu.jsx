@@ -90,7 +90,10 @@ const ListMenuContainer= styled.div`
         align-items: center;
         padding: 35px;
         margin-top: 9vh;
-        width: 95%;
+        width: 70%;
+        @media (max-width: 1200px) {
+            width: 95%;
+        }
         
         .muscle-box { 
             display: flex;

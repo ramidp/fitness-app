@@ -253,7 +253,10 @@ const AeroMenuContainer= styled.div`
         align-items: center;
         padding: 35px;
         margin-top: 9vh;
-        width: 95%;
+        width: 70%;
+        @media (max-width: 1200px) {
+            width: 95%;
+        }
 
         .button, button {
             height: 40px;
@@ -294,14 +297,10 @@ const AeroMenuContainer= styled.div`
                 .arr-item {
                     margin-bottom: 10px;
                     width: fit-content;
-                    font-size: 25px;
+                    font-size: 20px;
                     cursor: pointer;
-                    @media (max-width: 921px) {
-                        font-size: 20px;
-                    }
-
                     @media (max-width: 765px) {
-                        font-size: 18px;
+                        font-size: 16px;
                     }
                     &:hover {
                         font-weight: 700;
@@ -312,13 +311,11 @@ const AeroMenuContainer= styled.div`
                 overflow: hidden;
                 margin-right: 10px;
                 font-size: 20px;
-                
 
                 option {
                     height: auto;
                     background-color: inherit;
                     padding: 5px;
-
                 }
 
                 @media (max-width: 765px) {
@@ -341,22 +338,22 @@ const AeroMenuContainer= styled.div`
                 margin-bottom: 10px;
                 border-width: 100%!important;
                 border-bottom: 1px solid ${props => props.theme.primary};
-                font-size: 30px;
+                font-size: 27px;
                 font-weight: 400;
-                
-                @media (max-width: 921px) {
-                        font-size: 27px;
-                    }
-
 
                 @media (max-width: 765px) {
-                        font-size: 25px;
+                        font-size: 22px;
                     }
 
 
                 span {
                     cursor: pointer;
                     font-size: 20px;
+
+                    @media (max-width: 765px) {
+                        font-size: 16px;
+                    }
+
                     &:hover {
                         font-weight: bold;
                     }

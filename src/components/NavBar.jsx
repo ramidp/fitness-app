@@ -53,7 +53,7 @@ const NavBarContainer = styled.div`
     position: fixed;
     min-width: 190px;
 
-    @media (max-width: 920px ) {
+    @media (max-width: 1200px ) {
         justify-content: space-between;
     }
 
@@ -73,7 +73,7 @@ const NavBarContainer = styled.div`
             }
         }
 
-     @media (max-width: 920px) {
+     @media (max-width: 1200px) {
         display: block;
         
      }
@@ -90,7 +90,7 @@ const NavBarContainer = styled.div`
     display: flex;
     justify-content: center;
 
-    @media (max-width: 920px) {
+    @media (max-width: 1200px) {
         display: none;
     }
     

@@ -39,7 +39,7 @@ const ContenedorAlerta = styled.div`
  
         background: ${props => props.theme.tertiary};
         color: #fff;
-        padding: 1.25rem 2.5rem; /* 20px 40px */
+        padding: 0.5rem 1.5rem; /* 20px 40px */
         border-radius: 0.31rem; /* 5px */
         box-shadow: 0px 0px 15px rgba(0,0,0,.1);
         text-align: center;

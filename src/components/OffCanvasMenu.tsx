@@ -62,7 +62,7 @@ const OffCanvasContainer = styled.div`
 
   display: none;
 
-  @media (max-width: 920px) {
+  @media (max-width: 1200px) {
   display: inline-block; 
   }
   

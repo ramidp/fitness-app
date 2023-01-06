@@ -5,7 +5,6 @@ import useObtenerDatos from "../hooks/useObtenerDatos";
 
 const WeekMenu = () => {
 
-const {usuario} = useAuth();
 const [datos, datos2] = useObtenerDatos('')
 
     const WeekAndColors = [
@@ -110,8 +109,10 @@ const WeekMenuContainer = styled.div`
         align-items: center;
         padding: 35px;
         margin-top: 9vh;
-        width: 95%;
-
+        width: 70%;
+        @media (max-width: 1200px) {
+            width: 95%;
+        }
 
     .semana-box { 
             display: flex;
