@@ -5,16 +5,24 @@ import {Link} from 'react-router-dom'
 import BotonCerrarSesion from "./CerrarSesion";
 
 const NavBar = () => {
-
-    const [linkId, setLinkId] = useState('1')
+    
+    const [linkId, setLinkId] = useState(localStorage.getItem('id'))
+    
+    if (localStorage.getItem('id') == null) {
+        setLinkId('11')
+    }
+    
+    localStorage.setItem('id', linkId)
     
     const handleClick = (e) => {
         setLinkId(e.target.id)
     }
 
+
     return ( 
         <NavBarContainer>
-            <Link to={{pathname: '/'}}><h1 id="1" className={linkId === '1' ? 'active' : ''} selected onClick={handleClick} >Main</h1></Link>
+            <Link to={{pathname: '/'}}><h1 id="11" className={linkId === '11' ? 'active' : ''} selected onClick={handleClick} >Principal</h1></Link>
+            <Link to={{pathname: '/musculacion'}}><h1 id="1" className={linkId === '1' ? 'active' : ''} selected onClick={handleClick} >Musculación</h1></Link>
             <Link to={{pathname: '/aerobico'}}><h1 id="2" className={linkId === '2' ? 'active' : ''} onClick={handleClick} >Aeróbico</h1></Link>
             <Link to={{pathname: '/semana'}}><h1 id="3" className={linkId === '3' ? 'active' : ''} onClick={handleClick} >Mi Semana</h1></Link>
             <Link to={{pathname: '/rutina'}}><h1 id="4" className={linkId === '4' ? 'active' : ''} onClick={handleClick} >Mi Rutina</h1></Link>

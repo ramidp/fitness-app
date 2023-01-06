@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import MainMenu from "./components/MainMenu";
+import MuscMenu from "./components/MuscMenu";
 import ListMenu from "./components/ListMenu";
 import NavBar from "./components/NavBar";
-import Calculos from "./components/Calculos";
 import InfoUtil from "./components/InfoUtil";
 import Recomendados from "./components/Recomendados";
-import HomeBtn from "./components/UpBtn";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import WeekMenu from "./components/WeekMenu";
@@ -19,6 +17,7 @@ import LogIn from './components/LogIn';
 import SignUp from './components/SignUp';
 import LoadingScreen from "./components/LoadingScreen";
 import UpBtn from "./components/UpBtn";
+import Main from "./components/Main";
 
 
 // Paleta actual: https://palettes.shecodes.io/palettes/1448
@@ -53,7 +52,15 @@ const App = () => {
             <Route path="/" element={
                  <RutaPrivada>
                       <NavBar/>
-                      <MainMenu/>
+                      <Main/>
+                      <UpBtn/>
+                    </RutaPrivada>
+                  }/>
+
+            <Route path="/musculacion" element={
+                 <RutaPrivada>
+                      <NavBar/>
+                      <MuscMenu/>
                       <UpBtn/>
                     </RutaPrivada>
                   }/>

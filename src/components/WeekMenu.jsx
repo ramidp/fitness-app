@@ -1,12 +1,12 @@
-import { query, collection, orderBy, onSnapshot, where } from "firebase/firestore";
-import { useEffect, useState } from "react";
 import styled from "styled-components";
-import {db} from "../firebase/firebaseConfig";
 import { useAuth } from '../context/AuthContext';
+import useObtenerDatos from "../hooks/useObtenerDatos";
+
 
 const WeekMenu = () => {
 
 const {usuario} = useAuth();
+const [datos, datos2] = useObtenerDatos('')
 
     const WeekAndColors = [
         {   
@@ -50,51 +50,6 @@ const {usuario} = useAuth();
             color: 'black'
         }]
     
-    const consulta = query(
-        collection(db, 'fitness-info'),
-        orderBy('muscle', 'asc'),
-        where('uidUsuario', "==", usuario.uid)
-    )
-
-    const consulta2 = query(
-        collection(db, 'aero-info'),
-        orderBy('aero', 'asc'),
-        where('uidUsuario', "==", usuario.uid)
-    )
-
-    const [datos, setDatos] = useState([])
-    const [datos2, setDatos2] = useState([])
-    const [resultado, setResultado] = useState([])
-
-
-
-    useEffect(() => {
-        onSnapshot(
-            consulta,
-            (snapshot) => {
-                const dataForm = snapshot.docs.map((documento) => {
-                    return {...documento.data(), id: documento.id}
-                })
-                setDatos(dataForm);
-            },
-            (error) => {
-                console.log(error)
-            }
-        )
-
-        onSnapshot(
-            consulta2,
-            (snapshot) => {
-                const dataForm2 = snapshot.docs.map((documento) => {
-                    return {...documento.data(), id: documento.id}
-                })
-                setDatos2(dataForm2);
-            },
-            (error) => {
-                console.log(error)
-            }
-        )
-    },[])
     
     return ( 
         <WeekMenuContainer>
@@ -170,7 +125,7 @@ const WeekMenuContainer = styled.div`
                 flex-direction: column;
                 width: 350px;
                 height: auto!important;
-                min-height: 400px;
+                min-height: 200px;
                 padding: 15px;
                 gap: 5px;
 

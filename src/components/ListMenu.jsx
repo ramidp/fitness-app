@@ -1,80 +1,17 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark} from '@fortawesome/free-solid-svg-icons'
-import { collection, deleteDoc, doc, onSnapshot, orderBy, query, where } from "firebase/firestore";
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components'
 import musculos from "../data/info-muscles";
 import aeroEx from "../data/info-aero";
-import {db} from '../firebase/firebaseConfig';
 import { useAuth } from '../context/AuthContext';
+import useObtenerDatos2 from "../hooks/useObtenerDatos2";
 
 const ListMenu = () => {
 
     const {usuario} = useAuth();
 
-    const consulta = query(
-        collection(db, 'fitness-info'),
-        orderBy('fecha', 'asc'),
-        where('uidUsuario', "==", usuario.uid)
-    )
-
-    const consulta2 = query(
-        collection(db, 'aero-info'),
-        orderBy('fecha', 'asc'),
-        where('uidUsuario', "==", usuario.uid)
-
-    )
-
-    const [datos, setDatos] = useState([])
-    const [datos2, setDatos2] = useState([])
-
-    useEffect(() => {
-        onSnapshot(
-            consulta,
-            (snapshot) => {
-                const dataForm = snapshot.docs.map((documento) => {
-                    return {...documento.data(), id: documento.id}
-                })
-                setDatos(dataForm);
-            },
-            (error) => {
-                console.log(error)
-            }
-        )
-
-            onSnapshot(
-            consulta2,
-            (snapshot) => {
-                const dataForm2 = snapshot.docs.map((documento) => {
-                    return {...documento.data(), id: documento.id}
-                })
-                setDatos2(dataForm2);
-            },
-            (error) => {
-                console.log(error)
-            }
-        )
-
-        
-    },[usuario])
-
-    const deleteInfo = async (id) => {
-        try {
-            await deleteDoc(doc(db, 'fitness-info', id));
-        } catch(error){
-            console.log('Hubo un error al intentar eliminar el usuario')
-            console.log(error)
-        };
-    }
-
-    const deleteInfo2 = async (id) => {
-        try {
-            await deleteDoc(doc(db, 'aero-info', id));
-        } catch(error){
-            console.log('Hubo un error al intentar eliminar el usuario')
-            console.log(error)
-        };
-    }
+    const [datos, datos2, deleteInfo, deleteInfo2] = useObtenerDatos2('')
 
     // La idea es holdear colores en este State y poder usarlos cons los dias de la semana para pintar la rutina.
     const [color, setColor] = useState('')
@@ -168,7 +105,7 @@ const ListMenuContainer= styled.div`
                 align-items: center;
                 width: 350px;
                 height: auto!important;
-                min-height: 400px;
+                min-height: 200px;
                 padding: 15px;
                 gap: 5px;
                 

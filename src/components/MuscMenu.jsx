@@ -6,14 +6,13 @@ import { addDoc, collection, query} from 'firebase/firestore';
 import {useAuth} from '../context/AuthContext'
 import Alerta from './Alerta'
 
-const MainMenu = () => {
+const MuscMain = () => {
     
     const consulta = query(
         collection(db, 'fitness-info'),
     )
 
     const {usuario} = useAuth()
-
 
     const [serie, setSerie] = useState(0)
     const [reps, setReps] = useState(0)
@@ -24,8 +23,6 @@ const MainMenu = () => {
     const [estadoAlerta, cambiarEstadoAlerta] = useState(false);
     const [alerta, cambiarAlerta] = useState({})
     const [infoHidden, setInfoHidden] = useState(false)
-
-
 
     useEffect (() => {
             const multiply = reps * serie;
@@ -265,7 +262,7 @@ const MainMenu = () => {
      );
 }
  
-export default MainMenu;
+export default MuscMain;
 
 const MainMenuContainer= styled.div`
 
