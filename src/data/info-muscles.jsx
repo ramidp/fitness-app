@@ -133,7 +133,7 @@ const musculos = [
     },
     {
         id: 12,
-        name: 'Gluteos/Cadera',
+        name: 'Gluteos / Cadera',
         exercises: {
             ex1: 'Sentadilla con una sola pierna',
             ex2: 'Hip Thrusts',

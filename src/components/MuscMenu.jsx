@@ -22,7 +22,6 @@ const MuscMain = () => {
     const [day, setDay] = useState('Elegir Dia')
     const [estadoAlerta, cambiarEstadoAlerta] = useState(false);
     const [alerta, cambiarAlerta] = useState({})
-    const [infoHidden, setInfoHidden] = useState(false)
 
     useEffect (() => {
             const multiply = reps * serie;
@@ -48,6 +47,11 @@ const MuscMain = () => {
                         uidUsuario: usuario.uid,
 
                     });
+                    cambiarEstadoAlerta(true);
+                    cambiarAlerta({
+                     tipo: "exito",
+                     mensaje: "Se ha agregado un ejercicio satisfactoriamente"});
+    
                 } catch (error) {
                     console.log(error);
                 }

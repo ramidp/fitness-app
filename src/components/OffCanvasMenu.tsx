@@ -20,7 +20,7 @@ const OffCanvasExample = ({ name, ...props } : any) => {
       <Offcanvas show={show} onHide={handleClose} {...props}>
         <Offcanvas.Body>
         <div className="menu-closemark">
-                <Link onClick={handleClose} to="/">main</Link>
+                <Link onClick={handleClose} to="/">Main</Link>
               <p className="btn" onClick={handleClose}>X</p>
           </div>
                 <Link onClick={handleClose} to="/musculacion">Musculación</Link>

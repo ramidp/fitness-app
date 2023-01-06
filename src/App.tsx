@@ -18,6 +18,7 @@ import SignUp from './components/SignUp';
 import LoadingScreen from "./components/LoadingScreen";
 import UpBtn from "./components/UpBtn";
 import Main from "./components/Main";
+import Error404 from "./components/Error404";
 
 
 // Paleta actual: https://palettes.shecodes.io/palettes/1448
@@ -49,6 +50,13 @@ const App = () => {
             <Route path="/iniciar-sesion" element={<LogIn/>}/>
             <Route path="/crear-cuenta" element={<SignUp/>}/>
 
+            <Route path="*" element={
+                 <RutaPrivada>
+                      <NavBar/>
+                      <Error404/>
+                      <UpBtn/>
+                    </RutaPrivada>
+                  }/>
             <Route path="/" element={
                  <RutaPrivada>
                       <NavBar/>

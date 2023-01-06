@@ -56,6 +56,11 @@ const AeroMenu = () => {
                         uidUsuario: usuario.uid,
                         tiempo: tiempo,
                     });
+                    cambiarEstadoAlerta(true);
+                    cambiarAlerta({
+                     tipo: "exito",
+                     mensaje: "Se ha agregado un ejercicio satisfactoriamente"});
+
                 } catch (error) {
                     console.log(error);
                 }

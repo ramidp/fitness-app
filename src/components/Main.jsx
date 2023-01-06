@@ -8,6 +8,7 @@ import useObtenerDatos from "../hooks/useObtenerDatos";
 const Main = () => {
 
     const [today, setToday] = useState('')
+    const [deleted, setDeleted] = useState(false)
     const [datos, datos2] = useObtenerDatos('')
 
     useEffect(() => {
@@ -39,13 +40,18 @@ const Main = () => {
     return ( 
         <Container>
             <div className="main-box">
-                <div>
+                <div className="tip-box">
                     <h4>Consejos del Dia</h4>
-                    <div>
-                    <p className="tips">No olvides de beber tus 2 litros de agua diaros!!</p>
-
+                    <>
+                    {deleted === false ?
+                    <div className="tips">
+                        <p>No olvides de beber tus 2 litros de agua diaros</p>
+                        <FontAwesomeIcon onClick={() => setDeleted(true)} className="close" icon={faXmark} />
                     </div>
-                    <p className="tips">No olvides de beber tus 2 litros de agua diaros!!</p>
+                    :
+                    <></>
+                    }
+                    </>
                 </div>
 
                 <div className="day-box">
@@ -53,7 +59,7 @@ const Main = () => {
                 <div  className="card-info">
                         {datos.filter(dato => dato.day == today).map((dato) => {
                                     return (
-                                        <div key={dato.id} style={{background: 'green'}} className="card-day">
+                                        <div key={dato.id} style={{background: '#113f67'}} className="card-day">
                                             <div className="dato-close">
                                                 <h1 className="dato dato2"><b>{dato.muscle}</b> </h1>
                                                 <h1 className="dato"><b>Ejercicio:</b> {dato.exercise}</h1>
@@ -96,9 +102,36 @@ const Container = styled.div`
         margin-top: 9vh;
         width: 95%;
 
+    .tip-box {
+        padding: 5px;
+        .tips {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            background-color: ${props => props.theme.primary};
+            padding: 10px;
+            p {
+                color:  ${props => props.theme.fontWhite};
+                margin: 0;
+            }
+        }
+    }
+        
+        .close {
+            font-size: 12px;
+            padding-right: 5px;
+            color: ${props => props.theme.fontWhite};
+            cursor: pointer;
+            align-self: center;
+            &:hover {
+                color: ${props => props.theme.fontWhite};
+            }
+        }
+
     .main-box {
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
 
         .day-box {
@@ -137,8 +170,8 @@ const Container = styled.div`
                             font-size: 15px;
                             border: 1px solid white;
                             margin: 0;
-                            background-color: yellow!important;
-                            color: black!important;
+                            background-color: #113f67!important;
+                            color: white!important;
                         }
     
     

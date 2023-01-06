@@ -26,7 +26,6 @@ const useObtenerDatos2 = () => {
         try {
             await deleteDoc(doc(db, 'fitness-info', id));
         } catch(error){
-            console.log('Hubo un error al intentar eliminar el usuario')
             console.log(error)
         };
     }
@@ -35,7 +34,6 @@ const useObtenerDatos2 = () => {
         try {
             await deleteDoc(doc(db, 'aero-info', id));
         } catch(error){
-            console.log('Hubo un error al intentar eliminar el usuario')
             console.log(error)
         };
     }
@@ -46,7 +44,7 @@ const useObtenerDatos2 = () => {
             consulta,
             (snapshot) => {
                 const dataForm = snapshot.docs.map((documento) => {
-                    return {...documento.data(), id: documento.id}
+                    return {...documento.data(), i: documento.id}
                 })
                 setDatos(dataForm);
             },
