@@ -11,7 +11,7 @@ const useAuth = () => {
 const AuthProvider = ({children}) => {
 
     const [usuario, cambiarUsuario] = useState(); 
-    const [cargando, cambiarCargando] = useState(false); 
+    const [cargando, cambiarCargando] = useState(true); 
 
     useEffect(() => {
         const cancelarSuscripcion = onAuthStateChanged(auth, (usuario) => {
@@ -24,7 +24,7 @@ const AuthProvider = ({children}) => {
 
     return ( 
         <AuthContext.Provider value={{usuario: usuario}}>
-            {cargando == false && children} 
+            {!cargando && children} 
             </AuthContext.Provider>
      );
 }

@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { HashLink } from 'react-router-hash-link';
 import { useEffect, useState } from "react";
 import {OffCanvasTop} from "./OffCanvasMenu";
+import {Link} from 'react-router-dom'
 import BotonCerrarSesion from "./CerrarSesion";
 
 const NavBar = () => {
@@ -14,14 +14,14 @@ const NavBar = () => {
 
     return ( 
         <NavBarContainer>
-            <HashLink to={{pathname: '/'}}><h1 id="1" className={linkId === '1' ? 'active' : ''} selected onClick={handleClick} >Main</h1></HashLink>
-            <HashLink to={{pathname: '/aerobico'}}><h1 id="2" className={linkId === '2' ? 'active' : ''} onClick={handleClick} >Aeróbico</h1></HashLink>
-            <HashLink to={{pathname: '/semana'}}><h1 id="3" className={linkId === '3' ? 'active' : ''} onClick={handleClick} >Mi Semana</h1></HashLink>
-            <HashLink to={{pathname: '/rutina'}}><h1 id="4" className={linkId === '4' ? 'active' : ''} onClick={handleClick} >Mi Rutina</h1></HashLink>
-            <HashLink to={{pathname: '/recomendados'}}><h1 id="5" className={linkId === '5' ? 'active' : ''} onClick={handleClick} >Recomendados</h1></HashLink>
-            <HashLink to={{pathname: '/info-util'}}><h1 id="6" className={linkId === '6' ? 'active' : ''} onClick={handleClick} >Glosario</h1></HashLink>
-            {/* <HashLink to={{pathname: '/calculosderutina'}}><h1 id="5" className={linkId === '5' ? 'active' : ''} onClick={handleClick} >Info Útil</h1></HashLink> */}
-            <HashLink to={{pathname: '/contacto'}}><h1 id="7" className={linkId === '7' ? 'active' : ''} onClick={handleClick} >Contacto</h1></HashLink>
+            <Link to={{pathname: '/'}}><h1 id="1" className={linkId === '1' ? 'active' : ''} selected onClick={handleClick} >Main</h1></Link>
+            <Link to={{pathname: '/aerobico'}}><h1 id="2" className={linkId === '2' ? 'active' : ''} onClick={handleClick} >Aeróbico</h1></Link>
+            <Link to={{pathname: '/semana'}}><h1 id="3" className={linkId === '3' ? 'active' : ''} onClick={handleClick} >Mi Semana</h1></Link>
+            <Link to={{pathname: '/rutina'}}><h1 id="4" className={linkId === '4' ? 'active' : ''} onClick={handleClick} >Mi Rutina</h1></Link>
+            <Link to={{pathname: '/recomendados'}}><h1 id="5" className={linkId === '5' ? 'active' : ''} onClick={handleClick} >Recomendados</h1></Link>
+            <Link to={{pathname: '/info-util'}}><h1 id="6" className={linkId === '6' ? 'active' : ''} onClick={handleClick} >Glosario</h1></Link>
+            {/* <Link to={{pathname: '/calculosderutina'}}><h1 id="5" className={linkId === '5' ? 'active' : ''} onClick={handleClick} >Info Útil</h1></Link> */}
+            <Link to={{pathname: '/contacto'}}><h1 id="7" className={linkId === '7' ? 'active' : ''} onClick={handleClick} >Contacto</h1></Link>
 
             
             <div className="menu-celu">

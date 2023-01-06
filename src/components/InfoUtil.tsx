@@ -155,7 +155,7 @@ const InfoUtilContainer = styled.div`
         width: 100%;
         height: 40px;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         gap: 20px;
         @media (max-width: 700px) {
