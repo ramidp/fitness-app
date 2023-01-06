@@ -6,13 +6,7 @@ import BotonCerrarSesion from "./CerrarSesion";
 
 const NavBar = () => {
     
-    const [linkId, setLinkId] = useState(localStorage.getItem('id'))
-    
-    if (localStorage.getItem('id') == null) {
-        setLinkId('11')
-    }
-    
-    localStorage.setItem('id', linkId)
+    const [linkId, setLinkId] = useState([])
     
     const handleClick = (e) => {
         setLinkId(e.target.id)

@@ -111,13 +111,13 @@ const LogInContainer = styled.div`
 
         height: 90vh;
         color: ${props => props.theme.fontPrim};
-        background-color: ${props => props.theme.fourth};
+        background-color: ${props => props.theme.primary};
         display: flex;
         align-items: center;
         flex-direction: column;
         justify-content: space-between;
         margin-top: 5vh;
-        width: 95%;
+        width: 70%;
 
         svg {
         width: 95%;
@@ -127,7 +127,7 @@ const LogInContainer = styled.div`
 
     a {
         padding: 15px 0;
-        color: ${props => props.theme.fontPrim};
+        color: ${props => props.theme.fontWhite};
         &:hover {
             color: ${props => props.theme.hover}
         }
@@ -155,7 +155,7 @@ const LogInContainer = styled.div`
         }
 
         label {
-            color: ${props => props.theme.fontPrim};
+            color: ${props => props.theme.fontWhite};
             font-size: 22px;
         }
 
@@ -178,8 +178,7 @@ const LogInContainer = styled.div`
                 width: 60%;
                 color: ${props => props.theme.fontWhite};
                 &:hover {
-                    background-color: ${props => props.theme.primary};
-                    color: ${props => props.theme.fifth};
+                    filter: contrast(70%)
                 }
             }
         }

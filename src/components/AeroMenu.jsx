@@ -17,7 +17,6 @@ const AeroMenu = () => {
 
     const {usuario} = useAuth()
 
-    
     const consulta = query(
         collection(db, 'aero-info'),
     )
