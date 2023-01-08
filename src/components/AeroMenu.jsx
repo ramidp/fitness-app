@@ -28,18 +28,11 @@ const AeroMenu = () => {
     const [estadoAlerta, cambiarEstadoAlerta] = useState(false);
     const [alerta, cambiarAlerta] = useState({})
     const [result, setResult] = useState('')
-    const [infoHidden, setInfoHidden] = useState(false)
 
     useEffect (() => {
         const multiply = (tiempo/60) * 10;
         setResult(multiply)
     },[tiempo])
-
-    const handleInfoHidden = () => {
-       setInfoHidden(!infoHidden)
-    }
-
-
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -252,7 +245,7 @@ const AeroMenuContainer= styled.div`
         align-items: center;
         padding: 35px;
         margin-top: 9vh;
-        width: 70%;
+        width: 80%;
         @media (max-width: 1200px) {
             width: 95%;
         }

@@ -38,14 +38,17 @@ const useObtenerDatos2 = () => {
         };
     }
 
-
     useEffect(() => {
         onSnapshot(
             consulta,
             (snapshot) => {
                 const dataForm = snapshot.docs.map((documento) => {
-                    return {...documento.data(), i: documento.id}
-                })
+                    return {...documento.data(), id: documento.id}
+                });
+                const dataForm2 = snapshot.docs.map((documento) => {
+                    return {...documento.data(), id: documento.id}
+                });
+                setDatos2(dataForm2)
                 setDatos(dataForm);
             },
             (error) => {

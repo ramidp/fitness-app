@@ -143,6 +143,10 @@ const SignUpContainer = styled.div`
         justify-content: space-between;
         margin-top: 5vh;
         width: 70%;
+            @media (max-width: 1200px) {
+                width: 95%
+            }
+
 
     svg {
         width: 95%;

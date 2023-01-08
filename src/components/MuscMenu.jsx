@@ -29,8 +29,6 @@ const MuscMain = () => {
             setResult(roundResult)
     },[reps, serie])
 
-
-
     const handleSubmit = async (e) => {
         e.preventDefault()
 
@@ -279,7 +277,7 @@ const MainMenuContainer= styled.div`
         align-items: center;
         padding: 35px;
         margin-top: 9vh;
-        width: 70%;
+        width: 80%;
         @media (max-width: 1200px) {
             width: 95%;
         }

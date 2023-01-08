@@ -32,7 +32,7 @@ const Main = () => {
                 setToday("Viernes");
                 break;
             case 6:
-                setToday("Sábado");
+                setToday("Sabado");
             }
         },[today])
 
@@ -89,23 +89,25 @@ const Main = () => {
 export default Main;
 
 const Container = styled.div`
+
         height: auto;
+        min-height: 50vh;
         color: ${props => props.theme.fontPrim};
         background-color: ${props => props.theme.fourth};
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         padding: 35px;
         margin-top: 9vh;
-        width: 70%;
+        width: 80%;
         @media (max-width: 1200px) {
             width: 95%;
         }
 
 
     .tip-box {
-        width: 100%;
+        width: 90vw;
         height: auto;
         padding: 5px;
         display: flex;
@@ -120,10 +122,10 @@ const Container = styled.div`
             align-items: center;
             gap: 20px;
             background-color: ${props => props.theme.primary};
-            padding: 10px;
-            width: 80%;
+            padding: 10px 20px;
+            width: 60%;
             @media (max-width: 1200px) {
-                width: 100%;
+                width: 90%;
             }
             p {
                 color:  ${props => props.theme.fontWhite};
@@ -149,7 +151,8 @@ const Container = styled.div`
         justify-content: flex-start;
         align-items: center;
         flex-direction: column;
-        height: 80vh;
+        height: auto;
+    
 
         @media (max-width: 1200px) {
             height: auto;

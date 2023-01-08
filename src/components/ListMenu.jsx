@@ -3,23 +3,13 @@ import { faXmark} from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react';
 import styled from 'styled-components'
 import musculos from "../data/info-muscles";
-import aeroEx from "../data/info-aero";
-import { useAuth } from '../context/AuthContext';
+import aeroex from "../data/info-aero";
 import useObtenerDatos2 from "../hooks/useObtenerDatos2";
+import useObtenerDatos from "../hooks/useObtenerDatos";
 
 const ListMenu = () => {
 
-    const {usuario} = useAuth();
-
     const [datos, datos2, deleteInfo, deleteInfo2] = useObtenerDatos2('')
-
-    // La idea es holdear colores en este State y poder usarlos cons los dias de la semana para pintar la rutina.
-    const [color, setColor] = useState('')
-
-    const handleColor = (e) => {
-        setColor(e.target.value)
-        console.log(color)
-    }
 
     return ( 
         <ListMenuContainer>
@@ -31,9 +21,9 @@ const ListMenu = () => {
             <div className="muscle-box">
                 {musculos.sort((a, b) => a.name.localeCompare(b.name)).filter(musculo => musculo.id > 0).map((musculo) => {
                     return (
-                            <div key= {musculo.id} className="muscle-info">
+                            <div key={musculo.id} className="muscle-info">
                                 <h1 key={musculo.id}>{musculo.name}</h1>
-                                {datos.filter(dato => dato.muscle == musculo.name).map((dato) => {
+                                {datos.filter(dato => dato.muscle === musculo.name).map((dato) => {
                                     return (
                                         <div key={dato.id} className="card-info">
                                             <div className="dato-close">
@@ -51,11 +41,11 @@ const ListMenu = () => {
                             </div>
                         )
                     })}
-                    {aeroEx.sort((a, b) => a.name.localeCompare(b.name)).filter(aero => aero.id > 0).map((aero) => {
+                    {aeroex.sort((a, b) => a.name.localeCompare(b.name)).filter(aero => aero.id > 0).map((aero) => {
                     return (
                             <div key={aero.id} className="muscle-info">
-                                <h1 id={aero.name} key={aero.id}>{aero.name}</h1>
-                                {datos2.filter(dato2 => dato2.aero == aero.name).map((dato2) => {
+                                <h1 key={aero.id}>{aero.name}</h1>
+                                {datos2.filter(dato2 => dato2.aero === aero.name).map((dato2) => {
                                     return (
                                         <div key={dato2.id} className="card-info">
                                             <div className="dato-close">
@@ -90,7 +80,7 @@ const ListMenuContainer= styled.div`
         align-items: center;
         padding: 35px;
         margin-top: 9vh;
-        width: 70%;
+        width: 80%;
         @media (max-width: 1200px) {
             width: 95%;
         }

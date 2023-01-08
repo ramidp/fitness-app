@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { useAuth } from '../context/AuthContext';
 import useObtenerDatos from "../hooks/useObtenerDatos";
 
 
@@ -109,7 +108,7 @@ const WeekMenuContainer = styled.div`
         align-items: center;
         padding: 35px;
         margin-top: 9vh;
-        width: 70%;
+        width: 80%;
         @media (max-width: 1200px) {
             width: 95%;
         }
@@ -118,15 +117,16 @@ const WeekMenuContainer = styled.div`
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            height: 100%;
+            height: auto;
+            min-height: 100vh;
             width: 100%;
 
             .dia-info {
                 display: flex;
                 flex-direction: column;
                 width: 350px;
-                height: auto!important;
                 min-height: 200px;
+                height: auto;
                 padding: 15px;
                 gap: 5px;
 

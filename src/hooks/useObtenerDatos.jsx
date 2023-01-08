@@ -21,9 +21,6 @@ const useObtenerDatos = () => {
 
     const [datos, setDatos] = useState([])
     const [datos2, setDatos2] = useState([])
-    const [resultado, setResultado] = useState([])
-
-
 
     useEffect(() => {
         onSnapshot(

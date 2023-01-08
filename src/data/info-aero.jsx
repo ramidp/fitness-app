@@ -103,4 +103,4 @@ const aeroex = [
 ]
 
 
-export default aeroex
+export default aeroex;
