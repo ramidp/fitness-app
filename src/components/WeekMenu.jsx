@@ -46,7 +46,11 @@ const [datos, datos2] = useObtenerDatos('')
             id: 7,
             dia: 'Domingo',
             color: 'black'
-        }]
+        }];
+
+        {Object.values(datos).map(function (num, idx) {
+            return num + datos2[idx];
+        })}
     
     
     return ( 
@@ -56,13 +60,15 @@ const [datos, datos2] = useObtenerDatos('')
                     return (
                 <div key={day.dia} className="dia-info">
                     <div className="titulo-dia">
-                    <h1>{day.dia}</h1>
-                    <p>Intensidad del dia:
-                        <span>
-                    {Object.values(datos).filter(dato => dato.day == day.dia).reduce((r, { intensity }) => r + intensity, 0)}
-                    {/* {Object.values(datos2).filter(dato2 => dato2.day == day.dia).reduce((r, { intensity }) => r + intensity, 0)} */}
-                        </span>
-                    </p>
+                        <h1>{day.dia}</h1>
+                        <p>Calorias del día
+                            <span>
+                                <br />
+                        Musculaciión: {Object.values(datos).filter(dato => dato.day == day.dia).reduce((r, { calories }) => r + calories, 0)}
+                        <br />
+                        Aeróbico: {Object.values(datos2).filter(dato2 => dato2.day == day.dia).reduce((r, { calories }) => r + calories, 0)}
+                            </span>
+                        </p>
                     </div>
                         <div  className="card-info">
                         {datos.filter(dato => dato.day == day.dia).map((dato) => {
@@ -111,6 +117,7 @@ const WeekMenuContainer = styled.div`
         width: 80%;
         @media (max-width: 1200px) {
             width: 95%;
+            padding: 20px;
         }
 
     .semana-box { 
@@ -118,7 +125,7 @@ const WeekMenuContainer = styled.div`
             justify-content: center;
             flex-wrap: wrap;
             height: auto;
-            min-height: 100vh;
+            min-height: 80vh;
             width: 100%;
 
             .dia-info {
