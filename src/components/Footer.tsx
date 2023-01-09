@@ -132,6 +132,7 @@ const FooterContainer = styled.div`
         width: 70%;
         @media (max-width: 1200px) {
             width: 95%;
+            padding: 20px;
         }
 
 

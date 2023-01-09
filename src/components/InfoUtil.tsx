@@ -149,9 +149,10 @@ const InfoUtilContainer = styled.div`
         flex-direction: column;
         padding: 35px;
         margin-top: 9vh;
-        width: 70%;
+        width: 80%;
         @media (max-width: 1200px) {
             width: 95%;
+            padding: 20px;
         }
 
     .submenu {

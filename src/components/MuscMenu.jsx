@@ -41,7 +41,7 @@ const MuscMain = () => {
                         serie: serie,
                         reps: reps,
                         fecha: new Date(),
-                        intensity: result,
+                        calories: result,
                         day: day,
                         uidUsuario: usuario.uid,
 
@@ -280,6 +280,7 @@ const MainMenuContainer= styled.div`
         width: 80%;
         @media (max-width: 1200px) {
             width: 95%;
+            padding: 20px;
         }
 
 
@@ -318,11 +319,11 @@ const MainMenuContainer= styled.div`
             align-items: center;
 
             .list {
-                height: 75vh;
+                height: 60vh;
             }
 
             .arr-list {
-                height: 65vh;
+                height: 50vh;
                 overflow: auto;
 
                 .active {

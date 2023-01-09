@@ -14,61 +14,49 @@ const aeroex = [
         id: 1,
         name: 'Saltar Soga',
         exercises: {
-            ex1: 'Tipo HIIT',
-            ex2: 'Bajo',
-            ex3: 'Moderado',
-            ex4: 'Alto',
+            ex1: 'Saltos Simples',
+            ex2: 'Saltos Cruzados',
+            ex3: 'Saltos Dobles',
+            ex4: 'De Todo'
                 }
          },
     {   
         id: 2,
         name: 'Cinta',
         exercises: {
-            ex1: 'Tipo HIIT',
-            ex2: 'Bajo (3-4.6km/h)',
-            ex3: 'Medio (6.1-8km/h)',
-            ex4: 'Alto (8.1-11km/h)',
+            ex1: 'Caminar',
+            ex2: 'Caminata con Inclinación',
+            ex3: 'Caminata Rápida',
+            ex4: 'Trotar',
+            ex5: 'Correr',
                 }
          },
     {   
         id: 3,
         name: 'Functional',
         exercises: {
-            ex1: 'Tipo HIIT',
-            ex2: 'Burpees',
-            ex3: 'Bajo',
-            ex4: 'Moderado',
-            ex5: 'Alto',
+            ex1: 'Burpess',
                 }
          },
     {   
         id: 4,
         name: 'ABS',
         exercises: {
-            ex1: 'Tipo HIIT',
-            ex2: 'Bajo',
-            ex4: 'Moderado',
-            ex4: 'Alto',
+            ex1: '??',
                 }
          },
     {   
         id: 5,
         name: 'Eliptico',
         exercises: {
-            ex1: 'Tipo HIIT',
-            ex2: 'Bajo',
-            ex4: 'Moderado',
-            ex4: 'Alto',
+            ex1: '??',
                 }
          },
     {   
         id: 6,
         name: 'Natación',
         exercises: {
-            ex1: 'Tipo HIIT',
-            ex2: 'Bajo',
-            ex4: 'Moderado',
-            ex4: 'Alto',
+            ex1: '??',
                 }
          },
     {   
@@ -84,20 +72,14 @@ const aeroex = [
         id: 8,
         name: 'Bicicleta Fija',
         exercises: {
-            ex1: 'Tipo HIIT',
-            ex2: 'Bajo',
-            ex4: 'Moderado',
-            ex4: 'Alto',
+            ex1: '??',
                 }
          },
     {   
         id: 9,
         name: 'Danza/Zumba',
         exercises: {
-            ex1: 'Tipo HIIT',
-            ex2: 'Bajo',
-            ex4: 'Moderado',
-            ex4: 'Alto',
+            ex1: '??',
                 }
          },
 ]

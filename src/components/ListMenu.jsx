@@ -17,7 +17,6 @@ const ListMenu = () => {
                 <label htmlFor="monday">Lunes</label>
                 <input type="color" onChange={handleColor} id="monday" name="monday"/>
             </div> */}
-
             <div className="muscle-box">
                 {musculos.sort((a, b) => a.name.localeCompare(b.name)).filter(musculo => musculo.id > 0).map((musculo) => {
                     return (
@@ -33,10 +32,11 @@ const ListMenu = () => {
                                             <div className="datos">
                                                 <p className="dato "><b>Series:</b> {dato.serie}</p>
                                                 <p className="dato "><b>Reps:</b> {dato.reps}</p>
-                                                <p className="dato "><b>Inten:</b> {dato.intensity}</p>
+                                                <p className="dato "><b>Cals:</b> {dato.calories}</p>
                                             </div>
                                         </div>
-                                    )
+           
+                                        )
                                 })}
                             </div>
                         )
@@ -54,7 +54,7 @@ const ListMenu = () => {
                                             </div>
                                             <div className="datos">
                                                 <p className="dato "><b>Tiempo:</b>Nada</p>
-                                                <p className="dato "><b>Inten:</b>Nada</p>
+                                                <p className="dato "><b>Cals:</b>Nada</p>
                                             </div>
                                         </div>
                                     )
@@ -83,6 +83,7 @@ const ListMenuContainer= styled.div`
         width: 80%;
         @media (max-width: 1200px) {
             width: 95%;
+            padding: 20px;
         }
         
         .muscle-box { 
@@ -91,6 +92,7 @@ const ListMenuContainer= styled.div`
             flex-wrap: wrap;
             height: 100%;
             width: 100%;
+            min-height: 100vh;
 
             .muscle-info {
                 display: flex;

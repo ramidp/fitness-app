@@ -28,11 +28,45 @@ const AeroMenu = () => {
     const [estadoAlerta, cambiarEstadoAlerta] = useState(false);
     const [alerta, cambiarAlerta] = useState({})
     const [result, setResult] = useState('')
+    const [intensidad, setIntensidad] = useState('Nada')
+
+    // El Switch ya al poner el case 'XXX' te lo compara, es decir que le da el valor que uno ponga en cada caso y en ese caso, realiza lo que querramos
 
     useEffect (() => {
-        const multiply = (tiempo/60) * 10;
-        setResult(multiply)
-    },[tiempo])
+        switch (intensidad) {
+            case 'Nada':
+                const multiply = (tiempo/60) * 0 * 10;
+                setResult(multiply)
+                break;
+            case 'Muy Baja':
+                const multiply2 = (tiempo/60) * 0.5 * 10;
+                setResult(multiply2)
+                break;
+            case 'Baja':
+                const multiply3 = (tiempo/60) * 0.6 * 10;
+                setResult(multiply3)
+                break;
+            case 'Intermedia':
+                const multiply6 = (tiempo/60) * 0.7 * 10;
+                setResult(multiply6)
+                break;
+            case 'Alta':
+                const multiply4 = (tiempo/60) * 1 * 10;
+                setResult(multiply4)
+                break;
+            case 'Muy Alta':
+                const multiply5 = (tiempo/60) * 1.2 * 10;
+                setResult(multiply5)
+                break;
+            case 'HIIT':
+                const multiply7 = (tiempo/60) * 1.3 * 10;
+                setResult(multiply7)
+                break;
+        
+            default:
+                break;
+        }
+    },[intensidad])
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -47,6 +81,7 @@ const AeroMenu = () => {
                         day: day,
                         uidUsuario: usuario.uid,
                         tiempo: tiempo,
+                        calories: result,
                     });
                     cambiarEstadoAlerta(true);
                     cambiarAlerta({
@@ -122,7 +157,10 @@ const AeroMenu = () => {
         }
     }
 
-    const Arrange = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
+    const handleChange2 = (e) => {
+            setIntensidad(e.target.value)
+    }
+    
     const Seconds = [0,30,60,90,120,180,210,240,270,300,330,360,390,420,450,480,510,540,570,600,630,660,690,720,750,780,810,840,870,900];
     const WeekAndColors = [
         {
@@ -156,6 +194,26 @@ const AeroMenu = () => {
         {
             dia: 'Domingo',
             color: 'yellow'
+        }]
+
+    const Intensidades = [
+        {
+            name: 'Nada',
+        },
+        {
+            name: 'Muy Baja',
+        },
+        {
+            name: 'Baja',
+        },
+        {
+            name: 'Intermedia',
+        },
+        {
+            name: 'Alta',
+        },
+        {
+            name: 'Muy Alta',
         }]
 
     const onReset = () => {
@@ -201,16 +259,34 @@ const AeroMenu = () => {
                                         })}
                                 </select>
                         </div>
+                        <div className="label-input col-12">
+                                <label className="col-12" htmlFor="">Intensidad</label>
+                                <select  value={intensidad} onChange={handleChange2} >
+                                <option disabled value={Intensidades[0].name} id={Intensidades[0].id}>{Intensidades[0].name}</option>
+                                    {Intensidades.slice(1,8).map((intensity) => {
+                                            return (
+                                                <>
+                                                    <option 
+                                                    key={intensity.id} 
+                                                    value={intensity.name} 
+                                                    >
+                                                        {intensity.name}
+                                                    </option>
+                                                </>
+                                            )
+                                        })}
+                                </select>
+                        </div>
 
                         <div className="label-input col-12">
-                            <label className="col-12 inten-label" htmlFor="">Intensidad 
+                            <label className="col-12 inten-label" htmlFor="">Calorias 
                             <span>
                                 <a href="/info-util">
                                 (Más Info)
                                     </a>
                                 </span>
                             </label>
-                            <h1>{result} </h1>
+                            <h1>{result}</h1>
                         </div>
 
                     </div>
@@ -248,6 +324,7 @@ const AeroMenuContainer= styled.div`
         width: 80%;
         @media (max-width: 1200px) {
             width: 95%;
+            padding: 20px;
         }
 
         .button, button {
@@ -275,10 +352,10 @@ const AeroMenuContainer= styled.div`
             align-items: center;
 
             .list {
-                height: 75vh;
+                height: 60vh;
             }
             .arr-list {
-                height: 65vh;
+                height: 50vh;
                 overflow: auto;
 
                 .active {
@@ -356,6 +433,10 @@ const AeroMenuContainer= styled.div`
             .label-input {
                 height: auto;
                 padding: 0 0 30px 0;
+                
+                .hide {
+                    display: none;
+                }
                 
                 select {
                     color: ${props => props.theme.fontPrim};

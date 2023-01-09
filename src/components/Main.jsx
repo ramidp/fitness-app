@@ -56,6 +56,20 @@ const Main = () => {
 
                 <div className="day-box">
                 <h1 className="day-title">{today}</h1>
+                <div className="titulo-dia">
+                        <p>
+                            <b>
+                            Calorias del día
+                            </b>
+                            <span>
+                                <br />
+                        Musculaciión: {Object.values(datos).filter(dato => dato.day == today).reduce((r, { calories }) => r + calories, 0)}
+                        <br />
+                        Aeróbico: {Object.values(datos2).filter(dato2 => dato2.day == today).reduce((r, { calories }) => r + calories, 0)}
+                            </span>
+                        </p>
+                    </div>
+
                 <div  className="card-info">
                         {datos.filter(dato => dato.day == today).map((dato) => {
                                     return (
@@ -103,6 +117,7 @@ const Container = styled.div`
         width: 80%;
         @media (max-width: 1200px) {
             width: 95%;
+            padding: 20px;
         }
 
 
@@ -152,6 +167,7 @@ const Container = styled.div`
         align-items: center;
         flex-direction: column;
         height: auto;
+        width: 100%;
     
 
         @media (max-width: 1200px) {
