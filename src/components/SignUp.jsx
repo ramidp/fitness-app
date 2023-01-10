@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {auth} from '../firebase/firebaseConfig'
 import { createUserWithEmailAndPassword } from 'firebase/auth'
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate,Link } from 'react-router-dom'; 
 import Alerta from './Alerta'
 import { useState } from 'react';
 
@@ -113,7 +113,7 @@ const RegistroUsuarios = () => {
                 <div className="boton">
                     <button type="submit">Crear Cuenta</button> 
                 </div>
-                <a href="/iniciar-sesion">Iniciar sesión</a>
+                <Link to="/iniciar-cuenta">Iniciar sesión</Link>
             </form>
 
 

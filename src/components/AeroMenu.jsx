@@ -28,7 +28,14 @@ const AeroMenu = () => {
     const [estadoAlerta, cambiarEstadoAlerta] = useState(false);
     const [alerta, cambiarAlerta] = useState({})
     const [result, setResult] = useState('')
-    const [intensidad, setIntensidad] = useState('Nada')
+    const [intensidad, setIntensidad] = useState('Nada');
+    const [minutes, setMinutes] = useState(0)
+
+    useEffect (() => {
+       const result = tiempo / 60;
+       (Math.round(result * 100) / 100).toFixed(2);
+        setMinutes(result)
+    },[tiempo])
 
     // El Switch ya al poner el case 'XXX' te lo compara, es decir que le da el valor que uno ponga en cada caso y en ese caso, realiza lo que querramos
 
@@ -71,7 +78,7 @@ const AeroMenu = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-            if (aeroEx !==  "" && exName !== "Sin Ejercicio Seleccionado" && day !== "Elegir Dia") {
+            if (aeroEx !==  "" && exName !== "Sin Ejercicio Seleccionado" && day !== "Elegir Dia" && tiempo !== 0 && intensidad !== "Nada") {
                 try {
                     await addDoc(consulta,
                     {
@@ -95,6 +102,7 @@ const AeroMenu = () => {
                 setExName('Sin Ejercicio Seleccionado');
                 setDay('Elegir Dia');
                 setTiempo(0);
+                setIntensidad('Nada')
             } else {
                 cambiarEstadoAlerta(true);
                 cambiarAlerta({
@@ -221,6 +229,7 @@ const AeroMenu = () => {
         setExName('Sin Ejercicio Seleccionado');
         setDay('Elegir Dia');
         setTiempo(0);
+        setIntensidad('Nada')
     }
 
     return ( 
@@ -238,15 +247,16 @@ const AeroMenu = () => {
                     </div>
                     <div className="list col-12 col-md-4">
                         <div className="label-input">
-                            <label className="col-12" htmlFor="">Tiempo <span>(Segundos)</span></label>
+                            <label className="col-12" htmlFor="">Tiempo <b style={{fontSize: '15px'}}>(Segundos)</b></label>
                             <select value={tiempo} onChange={handleChange} name="tiempo" id="">
                                 <option disabled value={Seconds[0].dia}>{Seconds[0]}</option>
                                 {Seconds.slice(1,30).map((item) => {
                                     return (
-                                        <option key={item} value={item}>{item}</option>
+                                            <option key={item} value={item}>{item}</option>
                                         )
                                     })}
                             </select>
+                            <p style={{margin: "0", paddingTop: '10px'}}>Minutos: <b>{minutes}'</b></p>
                         </div>
                         <div className="label-input col-12">
                                 <label className="col-12" htmlFor="">Día de semana</label>
@@ -265,14 +275,12 @@ const AeroMenu = () => {
                                 <option disabled value={Intensidades[0].name} id={Intensidades[0].id}>{Intensidades[0].name}</option>
                                     {Intensidades.slice(1,8).map((intensity) => {
                                             return (
-                                                <>
                                                     <option 
-                                                    key={intensity.id} 
+                                                    key={intensity.name} 
                                                     value={intensity.name} 
                                                     >
                                                         {intensity.name}
                                                     </option>
-                                                </>
                                             )
                                         })}
                                 </select>
@@ -355,7 +363,6 @@ const AeroMenuContainer= styled.div`
                 height: 60vh;
             }
             .arr-list {
-                height: 50vh;
                 overflow: auto;
 
                 .active {

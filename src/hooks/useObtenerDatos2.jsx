@@ -70,7 +70,7 @@ const useObtenerDatos2 = () => {
         )
 
         
-    },[usuario])
+    },[])
 
     return [datos, datos2, deleteInfo, deleteInfo2]
 }

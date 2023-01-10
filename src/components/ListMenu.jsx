@@ -1,11 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark} from '@fortawesome/free-solid-svg-icons'
-import { useState } from 'react';
 import styled from 'styled-components'
 import musculos from "../data/info-muscles";
 import aeroex from "../data/info-aero";
 import useObtenerDatos2 from "../hooks/useObtenerDatos2";
-import useObtenerDatos from "../hooks/useObtenerDatos";
 
 const ListMenu = () => {
 
@@ -53,8 +51,8 @@ const ListMenu = () => {
                                                 <FontAwesomeIcon onClick={() => deleteInfo2(dato2.id)} className="close" icon={faXmark} />
                                             </div>
                                             <div className="datos">
-                                                <p className="dato "><b>Tiempo:</b>Nada</p>
-                                                <p className="dato "><b>Cals:</b>Nada</p>
+                                                <p className="dato "><b>Tiempo:</b> {dato2.tiempo}</p>
+                                                <p className="dato "><b>Cals:</b> {dato2.calories}</p>
                                             </div>
                                         </div>
                                     )

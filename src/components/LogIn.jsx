@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import {auth} from '../firebase/firebaseConfig'
 import Alerta from './Alerta'
+import { Link } from "react-router-dom";
 
 const LogIn = () => {
 
@@ -87,7 +88,7 @@ const LogIn = () => {
                 <div className="boton">
                     <button type="submit">Iniciar Sesion</button> 
                 </div>
-                <a href="/crear-cuenta">Registrarse</a>
+                <Link to="/crear-cuenta">Registrarse</Link>
             </form>
 
 

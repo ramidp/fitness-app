@@ -23,6 +23,8 @@ const MuscMain = () => {
     const [estadoAlerta, cambiarEstadoAlerta] = useState(false);
     const [alerta, cambiarAlerta] = useState({})
 
+    // Hay que crear una seccion que determine si es HIPERTROFIA o FUERZA y crear un potenciador, ya que hacer 3x5 con mucho peso es tan desgastante como hacer 3x12 con 50% de peso.
+
     useEffect (() => {
             const multiply = ((serie*60)*2/60) * 7 * (reps/10);
             const roundResult = Math.round(multiply)
@@ -323,7 +325,6 @@ const MainMenuContainer= styled.div`
             }
 
             .arr-list {
-                height: 50vh;
                 overflow: auto;
 
                 .active {

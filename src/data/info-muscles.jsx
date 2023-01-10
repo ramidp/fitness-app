@@ -50,8 +50,9 @@ const musculos = [
             ex3: '(Lateral) Row',
             ex4: '(Lateral) Polea Soga',
             ex5: '(Lateral) Polea con Barra',
-            ex6: '(Completa) Dominadas sin peso',
-            ex7: '(Completa) Dominadas con peso',
+            ex6: '(Lateral) Barra Espalda Agarre Triceps',
+            ex7: '(Completa) Dominadas sin peso',
+            ex8: '(Completa) Dominadas con peso',
                 }
     },
     {   

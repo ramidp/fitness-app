@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark} from '@fortawesome/free-solid-svg-icons'
@@ -9,7 +9,10 @@ const Main = () => {
 
     const [today, setToday] = useState('')
     const [deleted, setDeleted] = useState(false)
+    const [deleted2, setDeleted2] = useState(false)
     const [datos, datos2] = useObtenerDatos('')
+
+    
 
     useEffect(() => {
         switch (new Date().getDay()) {
@@ -44,12 +47,22 @@ const Main = () => {
                     <h4>Consejos del Dia</h4>
                     <>
                     {deleted === false ?
-                    <div id="1" className="tips">
-                        <p>No olvides de beber tus 2 litros de agua diaros</p>
-                        <FontAwesomeIcon onClick={() => setDeleted(true)} className="close" icon={faXmark} />
-                    </div>
-                    :
-                    <></>
+                        <div className="tips">
+                            <p>No olvides de beber tus 2 litros de agua diaros</p>
+                            <FontAwesomeIcon onClick={() => setDeleted(true)} className="close" icon={faXmark} />
+                        </div>
+                        :
+                        <></>
+                    }
+                    </>
+                    <>
+                    {deleted2 === false ?
+                        <div className="tips">
+                            <p>Tomate 3 minutos de descanso entre ciclo de ejercicios para una mayor eficiencia en tu entrenamiento.</p>
+                            <FontAwesomeIcon onClick={() => setDeleted2(true)} className="close" icon={faXmark} />
+                        </div>
+                        :
+                        <></>
                     }
                     </>
                 </div>
@@ -133,8 +146,9 @@ const Container = styled.div`
 
         .tips {
             display: flex;
+            flex-direction: row;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
             gap: 20px;
             background-color: ${props => props.theme.primary};
             padding: 10px 20px;
@@ -156,6 +170,7 @@ const Container = styled.div`
             color: ${props => props.theme.fontWhite};
             cursor: pointer;
             align-self: center;
+            margin: 0;
             &:hover {
                 color: ${props => props.theme.fontWhite};
             }
