@@ -112,7 +112,6 @@ const RecomendadosContainer = styled.div`
         color: ${props => props.theme.fontPrim};
         background-color: ${props => props.theme.fourth};
         display: flex;
-        justify-content: center;
         align-items: center;
         flex-direction: column;
         padding: 35px;

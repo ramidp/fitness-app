@@ -231,12 +231,11 @@ const InfoUtilContainer = styled.div`
         height: auto;
         min-height: 90vh;
         width: 100%;
-        padding-top: 80px;
         padding: 15px 0;
         display: flex;
         flex-direction: column;
         gap: 10px;
-        padding-top: 80px;
+        padding-top: 70px;
         padding-bottom: 50px;
     }
 `

@@ -322,9 +322,13 @@ const MainMenuContainer= styled.div`
 
             .list {
                 height: 60vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
             }
 
             .arr-list {
+                height: 90%;
                 overflow: auto;
 
                 .active {
@@ -333,7 +337,7 @@ const MainMenuContainer= styled.div`
                     display: block;
                 }
                 .arr-item {
-                    margin-bottom: 10px;
+                    margin-bottom: 5px;
                     width: fit-content;
                     font-size: 20px;
                     cursor: pointer;
@@ -355,6 +359,7 @@ const MainMenuContainer= styled.div`
             }
 
             label {
+                height: 50px;
                 padding-bottom: 10px;
                 margin-bottom: 10px;
                 border-bottom: 1px solid ${props => props.theme.primary};
@@ -379,7 +384,7 @@ const MainMenuContainer= styled.div`
         }
             .label-input {
                 height: auto;
-                padding: 0 0 30px 0;
+                padding: 0 0 20px 0;
 
                 select {
                     color: ${props => props.theme.fontPrim};

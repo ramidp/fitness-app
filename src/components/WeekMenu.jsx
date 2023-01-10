@@ -74,10 +74,8 @@ const [datos, datos2] = useObtenerDatos('')
                         {datos.filter(dato => dato.day == day.dia).map((dato) => {
                                     return (
                                         <div key={dato.id} style={{background: dato.day == day.dia ? day.color : ''}} className="card-day">
-                                            <div className="dato-close">
                                                 <h1 className="dato dato2"><b>{dato.muscle}</b> </h1>
                                                 <h1 className="dato"><b>Ejercicio:</b> {dato.exercise}</h1>
-                                            </div>
                                         </div>
                                     )
                                 })
@@ -86,10 +84,8 @@ const [datos, datos2] = useObtenerDatos('')
                         {datos2.filter(dato2 => dato2.day == day.dia).map((dato2) => {
                                     return (
                                         <div key={dato2.id} className="card-day aero-day">
-                                            <div className="dato-close">
                                                 <h1 className="dato2"><b>{dato2.aero}</b> </h1>
                                                 <h1 className="dato2"><b>Ejercicio:</b> {dato2.exercise}</h1>
-                                            </div>
                                         </div>
                                     )
                                 })}
@@ -137,7 +133,7 @@ const WeekMenuContainer = styled.div`
                 padding: 15px;
                 gap: 5px;
 
-                @media (max-width: 745px) {
+                @media (max-width: 778px) {
                     width: 100%;
                 }
                 
@@ -157,10 +153,10 @@ const WeekMenuContainer = styled.div`
                 h1 {
                     font-size: 30px;
                     font-weight: 400;
-                    padding-bottom: 10px;
+                    padding-bottom: 5px;
                     width: 100%;
 
-                    @media (max-width: 765px) {
+                    @media (max-width: 778px) {
                         font-size: 25px;
                     }
 
@@ -176,6 +172,10 @@ const WeekMenuContainer = styled.div`
                         padding: 10px;
                         border: 1px solid white;
                         width: 50%;
+                        height: 100px;
+                        display: flex;
+                        flex-direction: column;
+
                         .dato {
                             font-size: 14px;
                             border: none;

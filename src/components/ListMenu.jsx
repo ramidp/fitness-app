@@ -102,7 +102,7 @@ const ListMenuContainer= styled.div`
                 padding: 15px;
                 gap: 5px;
                 
-                @media (max-width: 745px) {
+                @media (max-width: 778px) {
                     width: 100%;
                 }
 
@@ -110,12 +110,12 @@ const ListMenuContainer= styled.div`
                 h1 {
                     font-size: 30px;
                     font-weight: 400;
-                    padding-bottom: 10px;
+                    padding-bottom: 5px;
                     margin-bottom: 10px;
                     border-bottom: 1px solid ${props => props.theme.primary};
                     width: 100%;
 
-                    @media (max-width: 765px) {
+                    @media (max-width: 778px) {
                         font-size: 25px;
                     }
 
