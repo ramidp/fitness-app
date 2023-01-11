@@ -234,10 +234,10 @@ const Container = styled.div`
                         .aero-day {
                             padding-bottom: 10px;
                             font-size: 15px;
-                            border: 1px solid white;
+                            border: 1px solid ${props => props.theme.primary};
                             margin: 0;
-                            background-color: #113f67!important;
-                            color: white!important;
+                            background-color: ${props => props.theme.fourth} ;
+                            color: ${props => props.theme.fontPrim}!important;
                         }
     
     

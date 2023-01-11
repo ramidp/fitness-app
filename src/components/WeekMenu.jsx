@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import useObtenerDatos from "../hooks/useObtenerDatos";
+import {useEffect, useState} from 'react'
 
 
 const WeekMenu = () => {
@@ -51,11 +52,21 @@ const [datos, datos2] = useObtenerDatos('')
         {Object.values(datos).map(function (num, idx) {
             return num + datos2[idx];
         })}
-    
+
+
+        // Aca se escribria el codigo para que los colores se puedan setear en un INPUT a gusto del cliente.
+        // const [color1, setColor1] = useState([])
+
+        // useEffect(() => {
+        //     // Aca va el codigo que guardaria el cambio del input color
+        // },[color1])
+
     
     return ( 
         <WeekMenuContainer>
             <div className="semana-box">
+                {/* <label htmlFor="">Biceps</label>
+                <input type="color" value={color1} onChange={(e) => setColor1(e.target.value)}/> */}
                 {WeekAndColors.slice(1,8).map((day) => {
                     return (
                 <div key={day.dia} className="dia-info">
@@ -73,7 +84,22 @@ const [datos, datos2] = useObtenerDatos('')
                         <div  className="card-info">
                         {datos.filter(dato => dato.day == day.dia).map((dato) => {
                                     return (
-                                        <div key={dato.id} style={{background: dato.day == day.dia ? day.color : ''}} className="card-day">
+                                        <div key={dato.id} style={{
+                                        background: dato.muscle === 'Biceps' && 'red' 
+                                        || dato.muscle === 'Triceps' && 'red'
+                                        || dato.muscle === 'Cuadriceps' && 'violet'
+                                        || dato.muscle === 'Gemelos' && 'violet'
+                                        || dato.muscle === 'Gluteos / Cadera' && 'violet'
+                                        || dato.muscle === 'Abductores' && 'violet'
+                                        || dato.muscle === 'Aductores' && 'gray'
+                                        || dato.muscle === 'Trapecios' && 'green'
+                                        || dato.muscle === 'Piernas' && 'violet'
+                                        || dato.muscle === 'Hombros' && 'green'
+                                        || dato.muscle === 'Pecho' && 'blue'
+                                        || dato.muscle === 'Espalda' && 'blue'
+                                        
+                                        }} 
+                                            className="card-day">
                                                 <h1 className="dato dato2"><b>{dato.muscle}</b> </h1>
                                                 <h1 className="dato"><b>Ejercicio:</b> {dato.exercise}</h1>
                                         </div>

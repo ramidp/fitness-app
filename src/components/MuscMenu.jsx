@@ -178,14 +178,12 @@ const MuscMain = () => {
         setDay('Elegir Dia');
     }
 
-    const [typeRepes, setTypeRepes] = useState(false)
-
     return ( 
         <MainMenuContainer>
             <form onSubmit={handleSubmit}>
                 <div className="row p-0 m-0 d-flex justify-content-center">
                     <div className="list col-6 col-md-4">
-                        <label className="col-12" htmlFor="muscle">Musculo</label>
+                        <label className="col-12" htmlFor="muscle">Músculo</label>
                             <MuscMenu/>
                     </div>
 
@@ -210,11 +208,6 @@ const MuscMain = () => {
 
                         <div className="label-input col-12">
                             <label className="col-12" htmlFor="repeticiones">Repeticiones</label>
-
-                            <div className="series-type d-flex gap-3">
-                                <p className={typeRepes === false ? 'active' : ''} onClick={() => setTypeRepes(false)}>Lineal</p>
-                                <p className={typeRepes === false ? '' : 'active'} onClick={() => setTypeRepes(true)}>Mix</p>
-                            </div>
 
                             <select value={reps} onChange={handleChange} name="repeticiones" id="">
                             <option disabled value={Arrange[0]}>{Arrange[0]}</option>
@@ -277,11 +270,10 @@ const MainMenuContainer= styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 35px;
-        margin-top: 9vh;
-        width: 80%;
+        margin-top: 2vh;
+        width: 100%;
+        padding: 20px;
         @media (max-width: 1200px) {
-            width: 95%;
             padding: 20px;
             /* margin-top: 1vh;
             padding-bottom: 8vh; */
@@ -339,7 +331,6 @@ const MainMenuContainer= styled.div`
                 }
                 .arr-item {
                     margin-bottom: 5px;
-                    width: fit-content;
                     font-size: 20px;
                     cursor: pointer;
                     @media (max-width: 765px) {
@@ -351,6 +342,7 @@ const MainMenuContainer= styled.div`
                 }
             }
             select {
+                overflow: hidden;
                 margin-right: 10px;
                 font-size: 20px;
 
@@ -389,10 +381,13 @@ const MainMenuContainer= styled.div`
 
                 select {
                     color: ${props => props.theme.fontPrim};
+                    
                     option {
-                        color: ${props => props.theme.fontPrim};
+                    height: auto;
+                    background-color: inherit;
+                    padding: 5px;
                     }
-                }
+
                 h1 {
                     font-size: 30px;
                     @media (max-width: 765px) {
@@ -410,5 +405,5 @@ const MainMenuContainer= styled.div`
                 }
             }
          }
-
+    }
 `

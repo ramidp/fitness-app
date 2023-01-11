@@ -27,6 +27,7 @@ const Container = styled.div`
         width: 95%;
 
         p {
+            text-align: center;
             font-size: 20px;
         }
         h3 {

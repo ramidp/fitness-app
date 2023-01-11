@@ -247,7 +247,7 @@ const AeroMenu = () => {
                             <ExMenu/>
                     </div>
                     <div className="list col-12 col-md-4">
-                        <div className="label-input">
+                        <div className="label-input col-12">
                             <label className="col-12" htmlFor="">Tiempo <b style={{fontSize: '15px'}}>(Segundos)</b></label>
                             <select value={tiempo} onChange={handleChange} name="tiempo" id="">
                                 <option disabled value={Seconds[0].dia}>{Seconds[0]}</option>
@@ -328,11 +328,10 @@ const AeroMenuContainer= styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 35px;
-        margin-top: 9vh;
-        width: 80%;
+        margin-top: 2vh;
+        width: 100%;
+        padding: 20px;
         @media (max-width: 1200px) {
-            width: 95%;
             padding: 20px;
             /* margin-top: 1vh;
             padding-bottom: 8vh; */
@@ -356,6 +355,16 @@ const AeroMenuContainer= styled.div`
             }
         }
 
+        .inten-label {
+            span {
+                padding-left: 10px;
+                a {
+                    color: inherit;
+                    text-decoration: none;
+                }
+            }
+        }
+
         form {
             width: 100%;
             height: auto;
@@ -368,6 +377,7 @@ const AeroMenuContainer= styled.div`
                 flex-direction: column;
                 justify-content: space-between;
             }
+
             .arr-list {
                 height: 90%;
                 overflow: auto;
@@ -379,7 +389,6 @@ const AeroMenuContainer= styled.div`
                 }
                 .arr-item {
                     margin-bottom: 5px;
-                    width: fit-content;
                     font-size: 20px;
                     cursor: pointer;
                     @media (max-width: 765px) {
@@ -395,32 +404,15 @@ const AeroMenuContainer= styled.div`
                 margin-right: 10px;
                 font-size: 20px;
 
-                option {
-                    height: auto;
-                    background-color: inherit;
-                    padding: 5px;
-                }
-
                 @media (max-width: 765px) {
                         font-size: 16px;
                     }
-
             }
-        .inten-label {
-            span {
-                padding-left: 10px;
-                a {
-                    color: inherit;
-                    text-decoration: none;
-                }
-            }
-        }
 
             label {
                 height: 50px;
                 padding-bottom: 10px;
                 margin-bottom: 10px;
-                border-width: 100%!important;
                 border-bottom: 1px solid ${props => props.theme.primary};
                 font-size: 27px;
                 font-weight: 400;
@@ -431,13 +423,9 @@ const AeroMenuContainer= styled.div`
 
 
                 span {
+                    height: 58px;
                     cursor: pointer;
                     font-size: 20px;
-
-                    @media (max-width: 765px) {
-                        font-size: 16px;
-                    }
-
                     &:hover {
                         font-weight: bold;
                     }
@@ -448,17 +436,16 @@ const AeroMenuContainer= styled.div`
             .label-input {
                 height: auto;
                 padding: 0 0 20px 0;
-                
-                .hide {
-                    display: none;
-                }
-                
+
                 select {
                     color: ${props => props.theme.fontPrim};
+                    
                     option {
-                        color: ${props => props.theme.fontPrim};
+                    height: auto;
+                    background-color: inherit;
+                    padding: 5px;
                     }
-                }
+
                 h1 {
                     font-size: 30px;
                     @media (max-width: 765px) {
@@ -476,5 +463,5 @@ const AeroMenuContainer= styled.div`
                 }
             }
          }
-
+    }
 `

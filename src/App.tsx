@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MuscMenu from "./components/MuscMenu";
@@ -19,6 +19,8 @@ import LoadingScreen from "./components/LoadingScreen";
 import UpBtn from "./components/UpBtn";
 import Main from "./components/Main";
 import Error404 from "./components/Error404";
+import MainMenu from "./components/MainMenu";
+import ArmadoRutina from "./components/ArmadoRutina";
 
 
 // Paleta actual: https://palettes.shecodes.io/palettes/1448
@@ -57,6 +59,12 @@ const App = () => {
                       <Error404/>
                     </RutaPrivada>
                   }/>
+            <Route path="/main-menu" element={
+              <RutaPrivada>
+                      <MainMenu/>
+                    </RutaPrivada>
+                  }/>
+
             <Route path="/" element={
               <RutaPrivada>
                       <NavBar/>
@@ -65,18 +73,10 @@ const App = () => {
                     </RutaPrivada>
                   }/>
 
-            <Route path="/musculacion" element={
-                 <RutaPrivada>
-                      <NavBar/>
-                      <MuscMenu/>
-                      <UpBtn/>
-                    </RutaPrivada>
-                  }/>
-
-            <Route path="/aerobico" element={
+            <Route path="/armado-rutina/*" element={
                     <RutaPrivada>
                       <NavBar/>
-                      <AeroMenu/>
+                      <ArmadoRutina/>
                       <UpBtn/>
                     </RutaPrivada>
                   }/>

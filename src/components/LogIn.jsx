@@ -45,7 +45,7 @@ const LogIn = () => {
         }
         try {
             await signInWithEmailAndPassword(auth, correo, password);
-            navegacion('/');
+            navegacion('/main-menu');
         } 
         catch(error){
             cambiarEstadoAlerta(true);
