@@ -108,7 +108,7 @@ export default Recomendados;
 
 const RecomendadosContainer = styled.div`
     
-        height: 100vh;
+        height: auto;
         color: ${props => props.theme.fontPrim};
         background-color: ${props => props.theme.fourth};
         display: flex;
@@ -120,6 +120,8 @@ const RecomendadosContainer = styled.div`
         @media (max-width: 1200px) {
             width: 95%;
             padding: 20px;
+            /* margin-top: 1vh;
+            padding-bottom: 8vh; */
         }
     
         .videos-box {

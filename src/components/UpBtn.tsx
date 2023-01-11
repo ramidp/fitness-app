@@ -16,9 +16,10 @@ export default UpBtn;
 const UpBtnContainer = styled.div `
     
     position: fixed;
-    bottom: 5%;
-    right: 3.5%;
+    bottom: 11%;
+    right: 5%;
     z-index: 100;
+    
     cursor: pointer;
     a {
         text-decoration: none;

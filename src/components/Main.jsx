@@ -44,7 +44,7 @@ const Main = () => {
         <Container>
             <div className="main-box">
                 <div className="tip-box">
-                    <h4>Consejos del Dia</h4>
+                    <h1>Consejos del Dia</h1>
                     <>
                     {deleted === false ?
                         <div className="tips">
@@ -131,6 +131,9 @@ const Container = styled.div`
         @media (max-width: 1200px) {
             width: 95%;
             padding: 20px;
+            min-height: 90vh;
+            /* margin-top: 1vh;
+            padding-bottom: 8vh; */
         }
 
 

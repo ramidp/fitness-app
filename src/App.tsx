@@ -46,19 +46,19 @@ const App = () => {
             <AuthProvider>
       <BrowserRouter>
           <Routes>
-            <Route path="/loading" element={<LoadingScreen/>}/>
+            {/* <Route path="/loading" element={<LoadingScreen/>}/> */}
             <Route path="/iniciar-sesion" element={<LogIn/>}/>
             <Route path="/crear-cuenta" element={<SignUp/>}/>
 
+            
             <Route path="*" element={
-                 <RutaPrivada>
+              <RutaPrivada>
                       <NavBar/>
                       <Error404/>
-                      <UpBtn/>
                     </RutaPrivada>
                   }/>
             <Route path="/" element={
-                 <RutaPrivada>
+              <RutaPrivada>
                       <NavBar/>
                       <Main/>
                       <UpBtn/>
@@ -99,8 +99,6 @@ const App = () => {
                     <RutaPrivada>
                       <NavBar/>
                       <Recomendados/>
-                      <UpBtn/>
-
                     </RutaPrivada>
                   }/>
             <Route path="/info-util" element={
@@ -122,9 +120,9 @@ const App = () => {
                     <RutaPrivada>
                       <NavBar/>
                       <Footer/>
-                      <UpBtn/>
                     </RutaPrivada>
                   }/>
+
           </Routes>
       </BrowserRouter>
     </AuthProvider>

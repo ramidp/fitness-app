@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import NavBar from "./NavBar";
 
 
 const Error404 = () => {

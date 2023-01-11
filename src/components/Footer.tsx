@@ -133,6 +133,8 @@ const FooterContainer = styled.div`
         @media (max-width: 1200px) {
             width: 95%;
             padding: 20px;
+            /* margin-top: 1vh;
+            padding-bottom: 8vh; */
         }
 
 

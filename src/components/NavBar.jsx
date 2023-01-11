@@ -45,10 +45,12 @@ const NavBarContainer = styled.div`
     align-items: center;
     background-color: ${props => props.theme.primary};
     position: fixed;
+    top: 0;
     min-width: 190px;
 
     @media (max-width: 1200px ) {
         justify-content: space-between;
+        /* top: 93vh; */
     }
 
    .menu-celu {

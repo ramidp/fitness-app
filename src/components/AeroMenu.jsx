@@ -5,6 +5,8 @@ import {db} from '../firebase/firebaseConfig'
 import { addDoc, collection, query } from 'firebase/firestore';
 import {useAuth} from '../context/AuthContext'
 import Alerta from './Alerta'
+import NavBar from "./NavBar";
+import UpBtn from "./UpBtn";
 
 
 
@@ -234,7 +236,6 @@ const AeroMenu = () => {
 
     return ( 
         <AeroMenuContainer>
-            
             <form onSubmit={handleSubmit}>
                 <div className="row p-0 m-0 d-flex justify-content-center">
                     <div className="list col-6 col-md-4">
@@ -333,6 +334,8 @@ const AeroMenuContainer= styled.div`
         @media (max-width: 1200px) {
             width: 95%;
             padding: 20px;
+            /* margin-top: 1vh;
+            padding-bottom: 8vh; */
         }
 
         .button, button {

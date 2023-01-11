@@ -51,6 +51,7 @@ export {OffCanvasExample, OffCanvasTop}
 const OffCanvasContainer = styled.div`
 
   .btn {
+    padding: 10px;
     margin-left: 20px;
     font-size: 15px;
     background-color: ${props => props.theme.primary};
@@ -65,5 +66,4 @@ const OffCanvasContainer = styled.div`
   @media (max-width: 1200px) {
   display: inline-block; 
   }
-  
   `
