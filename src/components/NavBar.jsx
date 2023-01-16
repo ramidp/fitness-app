@@ -15,8 +15,8 @@ const NavBar = () => {
 
     return ( 
         <NavBarContainer>
-            <Link to={{pathname: '/main-menu'}}><h1 id="12" className={linkId === '12' ? 'active' : ''} selected onClick={handleClick} >Menu</h1></Link>
-            <Link to={{pathname: '/'}}><h1 id="11" className={linkId === '11' ? 'active' : ''} selected onClick={handleClick} >Principal</h1></Link>
+            <Link to={{pathname: '/'}}><h1 id="12" className={linkId === '12' ? 'active' : ''} selected onClick={handleClick} >Menu</h1></Link>
+            <Link to={{pathname: '/main'}}><h1 id="11" className={linkId === '11' ? 'active' : ''} selected onClick={handleClick} >Mi Día</h1></Link>
             <Link to={{pathname: '/armado-rutina'}}><h1 id="1" className={linkId === '1' ? 'active' : ''} selected onClick={handleClick} >Armado Rutina</h1></Link>
             <Link to={{pathname: '/semana'}}><h1 id="3" className={linkId === '3' ? 'active' : ''} onClick={handleClick} >Mi Semana</h1></Link>
             <Link to={{pathname: '/rutina'}}><h1 id="4" className={linkId === '4' ? 'active' : ''} onClick={handleClick} >Mi Rutina</h1></Link>

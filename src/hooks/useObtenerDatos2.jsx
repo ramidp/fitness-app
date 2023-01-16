@@ -45,16 +45,15 @@ const useObtenerDatos2 = () => {
                 const dataForm = snapshot.docs.map((documento) => {
                     return {...documento.data(), id: documento.id}
                 });
-                const dataForm2 = snapshot.docs.map((documento) => {
-                    return {...documento.data(), id: documento.id}
-                });
-                setDatos2(dataForm2)
                 setDatos(dataForm);
             },
             (error) => {
                 console.log(error)
             }
         )
+    },[])
+
+    useEffect(() => {
 
             onSnapshot(
             consulta2,
@@ -71,6 +70,7 @@ const useObtenerDatos2 = () => {
 
         
     },[])
+
 
     return [datos, datos2, deleteInfo, deleteInfo2]
 }

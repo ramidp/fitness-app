@@ -1,14 +1,20 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
+import BotonCerrarSesion from "./CerrarSesion";
 
 
 // Paleta actual: https://palettes.shecodes.io/palettes/1448
 
 const MainMenu = () => {
 
-
   return ( 
     <Container>
+        <div className="main-footer">
+            <p>Página creada por ramidp@gmail.com</p>
+            <div className="d-flex justify-content-end gap-3">
+                <a href="/contacto">Contacto</a>
+                <BotonCerrarSesion/>
+            </div>
+        </div>
         <div className="grid">
             <div className="menu">
                 <a href="/armado-rutina/*">Crear mi Rutina</a>
@@ -17,7 +23,7 @@ const MainMenu = () => {
                 <a href="">Rutinas Sugeridas</a>
             </div>
             <div className="menu">
-                <a href="/">Mi Dia</a>
+                <a href="/main">Mi Dia</a>
             </div>
             <div className="menu">
                 <a href="/semana">Mi Semana</a>
@@ -28,10 +34,6 @@ const MainMenu = () => {
             <div className="menu">
                 <a href="/recomendados">Recomendados</a>
             </div>
-        </div>
-        <div className="main-footer">
-            <a href="/contacto">Contacto</a>
-            <p>Página creada por ramidp@2k144hz99fps</p>
         </div>
     </Container>
    )
@@ -92,11 +94,19 @@ const Container = styled.div`
             justify-content: space-around;
             align-items: center;
             background-color: ${props => props.theme.fourth};
+            padding: 0 5px;
             a, p {
                 text-align: center;
                 margin: 0;
                 color: ${props => props.theme.fontPrim};
                 text-decoration: none;
+            }
+            a:hover {
+                cursor: pointer;
+                font-weight: bold;
+            }
+            svg {
+                fill: ${props => props.theme.primary};
             }
         }
 `

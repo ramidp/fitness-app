@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import BotonCerrarSesion from './CerrarSesion';
 
 
 const OffCanvasExample = ({ name, ...props } : any) => {
@@ -20,16 +21,17 @@ const OffCanvasExample = ({ name, ...props } : any) => {
       <Offcanvas show={show} onHide={handleClose} {...props}>
         <Offcanvas.Body>
         <div className="menu-closemark">
-                <Link onClick={handleClose} to="/main-menu">Menu</Link>
+                <Link onClick={handleClose} to="/">Menu</Link>
               <p className="btn" onClick={handleClose}>X</p>
           </div>
-                <Link onClick={handleClose} to="/">Principal</Link>
+                <Link onClick={handleClose} to="/main">Mi Día</Link>
                 <Link onClick={handleClose} to="/armado-rutina">Armado Rutina</Link>
                 <Link onClick={handleClose} to="/semana">Mi Semana</Link>
                 <Link onClick={handleClose} to="/rutina">Mi Rutina</Link>
                 <Link onClick={handleClose} to="/recomendados">Recomendados</Link>
                 <Link onClick={handleClose} to="/info-util">Glosario</Link>
                 <Link onClick={handleClose} to="/contacto">Contacto</Link>
+                <BotonCerrarSesion/>
         </Offcanvas.Body>
       </Offcanvas>
     </OffCanvasContainer>
@@ -66,4 +68,5 @@ const OffCanvasContainer = styled.div`
   @media (max-width: 1200px) {
   display: inline-block; 
   }
+
   `

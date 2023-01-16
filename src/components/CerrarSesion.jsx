@@ -36,12 +36,11 @@ const BotonCerrarSesion = () => {
 export default BotonCerrarSesion;
 
 const Boton = styled.button `
-    background-color: ${props => props.theme.primary};
+    background-color: inherit;
     color: ${props => props.theme.fontWhite};
     border: none;
     font-size: 12px;
-    min-width: auto;
-    padding-right: 20px;
+    text-align: end;
 
     svg {
         height: 25px;

@@ -330,9 +330,9 @@ const AeroMenuContainer= styled.div`
         align-items: center;
         margin-top: 2vh;
         width: 100%;
-        padding: 20px;
+        padding: 20px 0;
         @media (max-width: 1200px) {
-            padding: 20px;
+            padding: 20px 0;
             /* margin-top: 1vh;
             padding-bottom: 8vh; */
         }
@@ -386,8 +386,11 @@ const AeroMenuContainer= styled.div`
                     color: ${props => props.theme.fontPrim}!important;
                     font-weight: 700;
                     display: block;
+                    background-color: #acacac34;
+                    border-radius: 10px;
                 }
                 .arr-item {
+                    padding-left: 5px;
                     margin-bottom: 5px;
                     font-size: 20px;
                     cursor: pointer;
@@ -396,6 +399,8 @@ const AeroMenuContainer= styled.div`
                     }
                     &:hover {
                         font-weight: 700;
+                        background-color: #acacac34;
+                        border-radius: 10px;
                     }
                 }
             }
@@ -457,9 +462,6 @@ const AeroMenuContainer= styled.div`
                 p {
                     cursor: pointer;
 
-                }
-                .active {
-                    font-weight: bold;
                 }
             }
          }

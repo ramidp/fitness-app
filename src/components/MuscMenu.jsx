@@ -272,9 +272,10 @@ const MainMenuContainer= styled.div`
         align-items: center;
         margin-top: 2vh;
         width: 100%;
-        padding: 20px;
+        padding: 20px 0;
+
         @media (max-width: 1200px) {
-            padding: 20px;
+            padding: 20px 0;
             /* margin-top: 1vh;
             padding-bottom: 8vh; */
         }
@@ -326,10 +327,13 @@ const MainMenuContainer= styled.div`
 
                 .active {
                     color: ${props => props.theme.fontPrim}!important;
+                    background-color: #acacac34;
+                    border-radius: 10px;
                     font-weight: 700;
                     display: block;
                 }
                 .arr-item {
+                    padding-left: 5px;
                     margin-bottom: 5px;
                     font-size: 20px;
                     cursor: pointer;
@@ -337,6 +341,8 @@ const MainMenuContainer= styled.div`
                         font-size: 16px;
                     }
                     &:hover {
+                        background-color: #acacac34;
+                        border-radius: 10px;
                         font-weight: 700;
                     }
                 }
@@ -398,10 +404,6 @@ const MainMenuContainer= styled.div`
             .series-type {
                 p {
                     cursor: pointer;
-
-                }
-                .active {
-                    font-weight: bold;
                 }
             }
          }

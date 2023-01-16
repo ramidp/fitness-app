@@ -59,13 +59,13 @@ const App = () => {
                       <Error404/>
                     </RutaPrivada>
                   }/>
-            <Route path="/main-menu" element={
+            <Route path="/" element={
               <RutaPrivada>
                       <MainMenu/>
                     </RutaPrivada>
                   }/>
 
-            <Route path="/" element={
+            <Route path="/main" element={
               <RutaPrivada>
                       <NavBar/>
                       <Main/>
@@ -79,7 +79,7 @@ const App = () => {
                       <ArmadoRutina/>
                       <UpBtn/>
                     </RutaPrivada>
-                  }/>
+                  }/> 
 
             <Route path="/rutina" element={
                     <RutaPrivada>

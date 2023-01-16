@@ -149,7 +149,7 @@ const InfoUtilContainer = styled.div`
         flex-direction: column;
         padding: 35px;
         margin-top: 9vh;
-        width: 80%;
+        width: 90%;
         @media (max-width: 1200px) {
             width: 95%;
             padding: 20px;

@@ -4,9 +4,90 @@ import styled from 'styled-components'
 import musculos from "../data/info-muscles";
 import aeroex from "../data/info-aero";
 import useObtenerDatos2 from "../hooks/useObtenerDatos2";
+import useObtenerPeso from "../hooks/useObtenerPeso";
+import {useState} from 'react';
+import Alerta from './Alerta'
+import { doc, updateDoc } from "firebase/firestore";
+import { db } from "../firebase/firebaseConfig"
 
-const ListMenu = () => {
 
+const Peso = ({id}) => {
+    
+    // Falta la parte VISUAL de que oculte el peso para editarlo.
+    
+    const [hide, setHide] = useState(true)
+    const [peso, setPeso] = useState('0')
+    const [estadoAlerta, cambiarEstadoAlerta] = useState(false);
+    const [alerta, cambiarAlerta] = useState({})
+
+    const documento = doc(db, 'fitness-info', id)
+        
+        const handleChange = (e) => {
+            setPeso(e.target.value)
+        }   
+
+    const handleSubmit =  async (e) => {
+       
+        e.preventDefault();
+        
+        if (peso !== "0" ) {
+            try {
+                await updateDoc(documento, 
+                    {   peso: peso,
+                    });
+                    cambiarEstadoAlerta(true);
+                    cambiarAlerta({
+                        tipo: "exito",
+                        mensaje: "Se ha agregado el peso correctamente"});
+                        
+                    } catch (error) {
+                        console.log(error);
+                    }
+                    setPeso('0');
+                    setHide(true)
+                    
+            } else {
+                cambiarEstadoAlerta(true);
+                cambiarAlerta({
+                 tipo: "error",
+                 mensaje: "Por favor completar el campo de peso"
+                })
+                return;
+                }
+
+        }
+
+
+    return (
+        <div className="d-flex justify-content-between">
+            {hide === false ? 
+            <>
+                <input className="input-peso" placeholder="0" value={peso} onChange={handleChange} type="number" />
+                <p className="dato">kgs</p>
+                <form onSubmit={handleSubmit} action="">
+                    <button className="pesobtn" type="submit">Save</button>
+                </form>
+            </>
+            :
+            <>  
+                <button className="pesobtn" onClick={() => setHide(false)}>Edit</button>
+            </>
+            }
+            <Alerta
+            tipo={alerta.tipo}
+            mensaje={alerta.mensaje}
+            estadoAlerta={estadoAlerta}
+            cambiarEstadoAlerta={cambiarEstadoAlerta}/>
+
+        </div>
+    )
+}
+
+
+const ListMenu = ({hide}) => {
+
+    const [estadoAlerta, cambiarEstadoAlerta] = useState(false);
+    const [alerta, cambiarAlerta] = useState({})
     const [datos, datos2, deleteInfo, deleteInfo2] = useObtenerDatos2('')
 
     return ( 
@@ -22,15 +103,22 @@ const ListMenu = () => {
                                 <h1 key={musculo.id}>{musculo.name}</h1>
                                 {datos.filter(dato => dato.muscle === musculo.name).map((dato) => {
                                     return (
-                                        <div key={dato.id} className="card-info">
+                                        <div key={dato.id} id={dato.id}className="card-info">
                                             <div className="dato-close">
                                                 <p className="dato"><b>Ejercicio:</b> {dato.exercise}</p>
                                                 <FontAwesomeIcon onClick={() => deleteInfo(dato.id)} className="close" icon={faXmark} />
                                             </div>
                                             <div className="datos">
-                                                <p className="dato "><b>Series:</b> {dato.serie}</p>
-                                                <p className="dato "><b>Reps:</b> {dato.reps}</p>
-                                                <p className="dato "><b>Cals:</b> {dato.calories}</p>
+                                                <p className="dato"><b>Series:</b> {dato.serie}</p>
+                                                <p className="dato"><b>Reps:</b> {dato.reps}</p>
+                                                <p className="dato"><b>Cals:</b> {dato.calories}</p>
+                                                    <p className="dato"><b>Peso:
+                                                        </b> <span>
+                                                                     {dato.peso}
+                                                            </span>
+                                                             kgs
+                                                        </p>
+                                                    <Peso id={dato.id}/>
                                             </div>
                                         </div>
            
@@ -62,6 +150,13 @@ const ListMenu = () => {
                     })}
                 </div>
 
+                <Alerta
+            tipo={alerta.tipo}
+            mensaje={alerta.mensaje}
+            estadoAlerta={estadoAlerta}
+            cambiarEstadoAlerta={cambiarEstadoAlerta}/>
+
+
         </ListMenuContainer>
      );
 }
@@ -78,12 +173,27 @@ const ListMenuContainer= styled.div`
         align-items: center;
         padding: 35px;
         margin-top: 9vh;
-        width: 80%;
+        width: 90%;
         @media (max-width: 1200px) {
             width: 95%;
             padding: 20px;
             /* margin-top: 1vh;
             padding-bottom: 8vh; */
+        }
+
+        .input-peso {
+            width: 50px;
+            font-size: 14px;
+            background-color: white;
+            border: none;
+
+        }
+        .pesobtn {
+            background: inherit;
+            border: none;
+            color: ${props => props.theme.fontWhite};
+            font-weight: 600;
+            font-size: 12px;
         }
         
         .muscle-box { 

@@ -50,6 +50,9 @@ const Container = styled.div`
         padding: 20px;
         margin-top: 9vh;
         width: 90%;
+          @media (max-width: 1200px) {
+            width: 95%;
+          }
         
         .menu {
           text-align: center;

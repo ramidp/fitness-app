@@ -6,6 +6,8 @@ import { db } from "../firebase/firebaseConfig"
 const useObtenerDatos = () => {
 
     const {usuario} = useAuth();
+    const [datos, setDatos] = useState([])
+    const [datos2, setDatos2] = useState([])
 
     const consulta = query(
         collection(db, 'fitness-info'),
@@ -18,9 +20,6 @@ const useObtenerDatos = () => {
         orderBy('aero', 'asc'),
         where('uidUsuario', "==", usuario.uid)
     )
-
-    const [datos, setDatos] = useState([])
-    const [datos2, setDatos2] = useState([])
 
     useEffect(() => {
         onSnapshot(
@@ -36,6 +35,10 @@ const useObtenerDatos = () => {
             }
         )
 
+    },[])
+
+    useEffect(() => {
+
         onSnapshot(
             consulta2,
             (snapshot) => {
@@ -49,10 +52,6 @@ const useObtenerDatos = () => {
             }
         )
     },[])
-
-
-
-
 
     return [datos, datos2]
 }
