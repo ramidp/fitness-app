@@ -5,8 +5,6 @@ import {db} from '../firebase/firebaseConfig'
 import { addDoc, collection, query } from 'firebase/firestore';
 import {useAuth} from '../context/AuthContext'
 import Alerta from './Alerta'
-import NavBar from "./NavBar";
-import UpBtn from "./UpBtn";
 
 
 

@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import musculos from "../data/info-muscles";
 import aeroex from "../data/info-aero";
 import useObtenerDatos2 from "../hooks/useObtenerDatos2";
-import useObtenerPeso from "../hooks/useObtenerPeso";
 import {useState} from 'react';
 import Alerta from './Alerta'
 import { doc, updateDoc } from "firebase/firestore";
@@ -14,11 +13,14 @@ import { db } from "../firebase/firebaseConfig"
 const Peso = ({id}) => {
     
     // Falta la parte VISUAL de que oculte el peso para editarlo.
+
     
     const [hide, setHide] = useState(true)
     const [peso, setPeso] = useState('0')
     const [estadoAlerta, cambiarEstadoAlerta] = useState(false);
     const [alerta, cambiarAlerta] = useState({})
+
+
 
     const documento = doc(db, 'fitness-info', id)
         
@@ -59,32 +61,33 @@ const Peso = ({id}) => {
 
 
     return (
-        <div className="d-flex justify-content-between">
-            {hide === false ? 
-            <>
-                <input className="input-peso" placeholder="0" value={peso} onChange={handleChange} type="number" />
-                <p className="dato">kgs</p>
-                <form onSubmit={handleSubmit} action="">
-                    <button className="pesobtn" type="submit">Save</button>
-                </form>
-            </>
-            :
-            <>  
-                <button className="pesobtn" onClick={() => setHide(false)}>Edit</button>
-            </>
-            }
-            <Alerta
-            tipo={alerta.tipo}
-            mensaje={alerta.mensaje}
-            estadoAlerta={estadoAlerta}
-            cambiarEstadoAlerta={cambiarEstadoAlerta}/>
 
-        </div>
-    )
+            <div className="d-flex justify-content-between">
+                {hide === false ? 
+                <>
+                    <input className="input-peso" placeholder="0" value={peso} onChange={handleChange} type="number" />
+                    <p className="dato">kgs</p>
+                    <form onSubmit={handleSubmit} action="">
+                        <button className="pesobtn" type="submit">Save</button>
+                    </form>
+                </>
+                :
+                <>  
+                    <button className="pesobtn" onClick={() => setHide(false)}>Edit</button>
+                </>
+                }
+                <Alerta
+                tipo={alerta.tipo}
+                mensaje={alerta.mensaje}
+                estadoAlerta={estadoAlerta}
+                cambiarEstadoAlerta={cambiarEstadoAlerta}/>
+    
+            </div>
+     )
 }
 
 
-const ListMenu = ({hide}) => {
+const ListMenu = () => {
 
     const [estadoAlerta, cambiarEstadoAlerta] = useState(false);
     const [alerta, cambiarAlerta] = useState({})
@@ -112,13 +115,16 @@ const ListMenu = ({hide}) => {
                                                 <p className="dato"><b>Series:</b> {dato.serie}</p>
                                                 <p className="dato"><b>Reps:</b> {dato.reps}</p>
                                                 <p className="dato"><b>Cals:</b> {dato.calories}</p>
+                                                <>
                                                     <p className="dato"><b>Peso:
                                                         </b> <span>
-                                                                     {dato.peso}
+                                                                    {dato.peso}
                                                             </span>
-                                                             kgs
+                                                            kgs
                                                         </p>
                                                     <Peso id={dato.id}/>
+                                                    
+                                                </>
                                             </div>
                                         </div>
            

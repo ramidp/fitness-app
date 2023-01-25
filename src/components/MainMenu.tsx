@@ -9,7 +9,8 @@ const MainMenu = () => {
   return ( 
     <Container>
         <div className="main-footer">
-            <p>Página creada por ramidp@gmail.com</p>
+            <p style={{fontSize: '13px'}}>ramidp@gmail.com</p>
+            <a href="/mi-perfil">Mi Perfil</a>
             <div className="d-flex justify-content-end gap-3">
                 <a href="/contacto">Contacto</a>
                 <BotonCerrarSesion/>
@@ -89,7 +90,7 @@ const Container = styled.div`
         .main-footer {
             height: 5vh;
             display: grid;
-            grid-template-columns: 50% 50%;
+            grid-template-columns: 33% 33% 33%;
             width: 100%;
             justify-content: space-around;
             align-items: center;

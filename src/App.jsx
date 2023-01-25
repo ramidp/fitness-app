@@ -1,7 +1,6 @@
 import { useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import MuscMenu from "./components/MuscMenu";
 import ListMenu from "./components/ListMenu";
 import NavBar from "./components/NavBar";
 import InfoUtil from "./components/InfoUtil";
@@ -9,18 +8,17 @@ import Recomendados from "./components/Recomendados";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import WeekMenu from "./components/WeekMenu";
-import AeroMenu from "./components/AeroMenu";
 import InfoDeRutina from "./components/InfoDeRutina";
 import { AuthProvider } from './context/AuthContext';
 import RutaPrivada from './components/RutaPrivada';
 import LogIn from './components/LogIn';
 import SignUp from './components/SignUp';
-import LoadingScreen from "./components/LoadingScreen";
 import UpBtn from "./components/UpBtn";
 import Main from "./components/Main";
 import Error404 from "./components/Error404";
 import MainMenu from "./components/MainMenu";
 import ArmadoRutina from "./components/ArmadoRutina";
+import MiPerfil from "./components/MiPerfil";
 
 
 // Paleta actual: https://palettes.shecodes.io/palettes/1448
@@ -43,90 +41,97 @@ const App = () => {
   })
 
   return ( 
+    
     <AppContainer>
             <ThemeProvider theme={theme} >
             <AuthProvider>
-      <BrowserRouter>
-          <Routes>
-            {/* <Route path="/loading" element={<LoadingScreen/>}/> */}
-            <Route path="/iniciar-sesion" element={<LogIn/>}/>
-            <Route path="/crear-cuenta" element={<SignUp/>}/>
+            <BrowserRouter>
+              <Routes>
+                {/* <Route path="/loading" element={<LoadingScreen/>}/> */}
+                <Route path="/iniciar-sesion" element={<LogIn/>}/>
+                <Route path="/crear-cuenta" element={<SignUp/>}/>
+                
+                <Route path="*" element={
+                  <RutaPrivada>
+                          <NavBar/>
+                          <Error404/>
+                        </RutaPrivada>
+                      }/>
 
-            
-            <Route path="*" element={
-              <RutaPrivada>
-                      <NavBar/>
-                      <Error404/>
-                    </RutaPrivada>
-                  }/>
-            <Route path="/" element={
-              <RutaPrivada>
-                      <MainMenu/>
-                    </RutaPrivada>
-                  }/>
+                <Route path="/" element={
+                  <RutaPrivada>
+                          <MainMenu/>
+                        </RutaPrivada>
+                      }/>
 
-            <Route path="/main" element={
-              <RutaPrivada>
-                      <NavBar/>
-                      <Main/>
-                      <UpBtn/>
-                    </RutaPrivada>
-                  }/>
+                <Route path="/main" element={
+                  <RutaPrivada>
+                          <NavBar/>
+                          <Main/>
+                          <UpBtn/>
+                        </RutaPrivada>
+                      }/>
 
-            <Route path="/armado-rutina/*" element={
-                    <RutaPrivada>
-                      <NavBar/>
-                      <ArmadoRutina/>
-                      <UpBtn/>
-                    </RutaPrivada>
-                  }/> 
+                <Route path="/mi-perfil" element={
+                  <RutaPrivada>
+                          <MiPerfil/>
+                        </RutaPrivada>
+                      }/>
 
-            <Route path="/rutina" element={
-                    <RutaPrivada>
-                      <NavBar/>
-                      <ListMenu/>
-                      <UpBtn/>
-                    </RutaPrivada>
-                  }/>
-            <Route path="/semana" element={
-                    <RutaPrivada>
-                      <NavBar/>
-                      <WeekMenu/>
-                      <UpBtn/>
-                    </RutaPrivada>
-                  }/>
-            <Route path="/recomendados" element={
-                    <RutaPrivada>
-                      <NavBar/>
-                      <Recomendados/>
-                    </RutaPrivada>
-                  }/>
-            <Route path="/info-util" element={
-                    <RutaPrivada>
-                      <NavBar/>
-                      <InfoUtil/>
-                      <UpBtn/>
-                    </RutaPrivada>
-                  }/>
-            <Route path="/calculosderutina" element={
-                    <RutaPrivada>
-                      <NavBar/>
-                      <InfoDeRutina/>
-                      <UpBtn/>
-                    </RutaPrivada>
-                  }/>
+                <Route path="/armado-rutina/*" element={
+                        <RutaPrivada>
+                          <NavBar/>
+                          <ArmadoRutina/>
+                          <UpBtn/>
+                        </RutaPrivada>
+                      }/> 
 
-            <Route path="/contacto" element={
-                    <RutaPrivada>
-                      <NavBar/>
-                      <Footer/>
-                    </RutaPrivada>
-                  }/>
+                <Route path="/rutina" element={
+                        <RutaPrivada>
+                          <NavBar/>
+                          <ListMenu/>
+                          <UpBtn/>
+                        </RutaPrivada>
+                      }/>
+                <Route path="/semana" element={
+                        <RutaPrivada>
+                          <NavBar/>
+                          <WeekMenu/>
+                          <UpBtn/>
+                        </RutaPrivada>
+                      }/>
+                <Route path="/recomendados" element={
+                        <RutaPrivada>
+                          <NavBar/>
+                          <Recomendados/>
+                        </RutaPrivada>
+                      }/>
+                <Route path="/info-util" element={
+                        <RutaPrivada>
+                          <NavBar/>
+                          <InfoUtil/>
+                          <UpBtn/>
+                        </RutaPrivada>
+                      }/>
+                <Route path="/calculosderutina" element={
+                        <RutaPrivada>
+                          <NavBar/>
+                          <InfoDeRutina/>
+                          <UpBtn/>
+                        </RutaPrivada>
+                      }/>
 
-          </Routes>
-      </BrowserRouter>
-    </AuthProvider>
-    </ThemeProvider>
+                <Route path="/contacto" element={
+                        <RutaPrivada>
+                          <NavBar/>
+                          <Footer/>
+                        </RutaPrivada>
+                      }/>
+
+              </Routes>
+          </BrowserRouter>
+        </AuthProvider>
+        </ThemeProvider>
     </AppContainer>
    );
 }
